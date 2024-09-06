@@ -2,11 +2,37 @@
 @using MyApp.Components.UI
 <h1>Hello, world!</h1>
 
-<Button />
+<Button UsePill="false" Method="@IncrementCounter" Text="IDK BRo" />
+
+<Input Id="Email" Value="" Type="Input.InputType.date" />
+
+<Input Id="Name" Value="" Placeholder="HI" />
+
+<Select Id="Places" Values="@SelectableValues" OnChange="SelectValue" />
+
+Your count: @count
+
+Your Value: @selectedValue
 
 Welcome to your new app.
 
 
 @code {
+    private int count { get; set; }
 
+    private string selectedValue { get; set; }
+
+    private string[] SelectableValues = ["Hi", "Bye"];
+
+    void SelectValue(string newValue)
+    {
+        selectedValue = newValue;
+        StateHasChanged();
+    }
+
+    void IncrementCounter()
+    {
+        count++;
+        StateHasChanged();
+    }
 }

@@ -1,0 +1,49 @@
+﻿
+
+<div>
+    <label for="@Id" class="block text-sm font-medium text-gray-900"> @Id </label>
+
+
+    <!-- 
+        The following event binding was adapted from medium.com
+        Author: Andrejs Abrickis
+        Link: https://medium.com/swlh/blazor-components-communication-pattern-7b14e54cd3f8
+    -->
+    <select name="@Id"
+            id="@Id"
+            class="mt-1.5 w-full rounded-lg border-gray-300 text-gray-700 sm:text-sm"
+            @onchange="Change"
+    >
+
+        <option value="">Please select</option>
+
+        @foreach (var item in Values)
+        {
+            <option value="@item">@item</option>
+        }
+
+    </select>
+</div>
+
+
+@code {
+    [EditorRequired]
+    [Parameter]
+    public string Id { get; set; }
+
+    [EditorRequired]
+    [Parameter]
+    public string[] Values { get; set; }
+
+    [EditorRequired]
+    [Parameter]
+    public Action<string>? OnChange { get; set; }
+
+    // The following function was adapted from stackoverflow.com
+    // Author: Patrick Knott, ΩmegaMan
+    // Link: https://stackoverflow.com/questions/49947790/blazor-onchange-event-with-select-dropdown
+    void Change(ChangeEventArgs e)
+    {
+        OnChange?.Invoke(e.Value.ToString());
+    }
+}

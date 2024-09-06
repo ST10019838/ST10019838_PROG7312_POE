@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\obj\\Debug\\net8.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\MyApp.styles.css",
+      "PackagePath": "staticwebassets\\MyApp.styles.css"
+    },
+    {
+      "Id": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\tailwind.css",
+      "PackagePath": "staticwebassets\\tailwind.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-maccatalyst\\maccatalyst-x64\\staticwebassets\\msbuild.MyApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-maccatalyst\\maccatalyst-x64\\staticwebassets\\msbuild.build.MyApp.props",
+      "PackagePath": "build\\MyApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-maccatalyst\\maccatalyst-x64\\staticwebassets\\msbuild.buildMultiTargeting.MyApp.props",
+      "PackagePath": "buildMultiTargeting\\MyApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-maccatalyst\\maccatalyst-x64\\staticwebassets\\msbuild.buildTransitive.MyApp.props",
+      "PackagePath": "buildTransitive\\MyApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

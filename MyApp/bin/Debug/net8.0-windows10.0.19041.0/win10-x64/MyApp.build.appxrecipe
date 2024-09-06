@@ -229,6 +229,9 @@
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\package.json">
       <PackagePath>package.json</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\tailwind.extension.json">
+      <PackagePath>tailwind.extension.json</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MyApp.deps.json">
       <PackagePath>MyApp.deps.json</PackagePath>
     </AppxPackagedFile>
