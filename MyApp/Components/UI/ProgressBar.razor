@@ -1,0 +1,100 @@
+﻿@using TailwindMerge;
+@inject TwMerge Tw;
+
+<div class="grid-rows-2 grid-cols-4 grid items-center gap-y-2">
+
+    <div class=@Tw.Merge("place-self-center justify-self-end", (Num >= 1) ? "text-blue-600" : "text-gray-600")>25%</div>
+    <div class=@Tw.Merge("place-self-center justify-self-end", (Num >= 2) ? "text-blue-600" : "text-gray-600")>50%</div>
+    <div class=@Tw.Merge("place-self-center justify-self-end", (Num >= 3) ? "text-blue-600" : "text-gray-600")>75%</div>
+    <div class=@Tw.Merge("place-self-center justify-self-end", (Num >= 4) ? "text-blue-600" : "text-gray-600")>100%</div>
+
+    <div class="-z-20 row-start-2 col-start-1 col-span-full h-1 rounded-full bg-gray-200" />
+    <div class="@Tw.Merge("-z-10 row-start-2 col-start-1 h-1 rounded-full bg-blue-500 transition-all", ColSpan)" />
+
+
+    <span class=@Tw.Merge("row-start-2 col-start-1 place-self-center justify-self-end rounded-full text-white", (Num >= 1) ? "bg-blue-600" : "bg-gray-600")>
+        <svg class="size-5"
+             xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 20 20"
+             fill="currentColor">
+            <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
+        </svg>
+    </span>
+   
+    <span class=@Tw.Merge("row-start-2 col-start-2 place-self-center justify-self-end rounded-full text-white", (Num >= 2) ? "bg-blue-600" : "bg-gray-600")>
+        <svg class="size-5"
+             xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 20 20"
+             fill="currentColor">
+            <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
+        </svg>
+    </span>
+
+    <span class=@Tw.Merge("row-start-2 col-start-3 place-self-center justify-self-end rounded-full text-white", (Num >= 3) ? "bg-blue-600" : "bg-gray-600")>
+        <svg class="size-5"
+             xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 20 20"
+             fill="currentColor">
+            <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
+        </svg>
+    </span>
+
+    <span class=@Tw.Merge("row-start-2 col-start-4 place-self-center justify-self-end rounded-full text-white", (Num >= 4) ? "bg-blue-600" : "bg-gray-600")>
+        <svg class="size-5"
+             xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 20 20"
+             fill="currentColor">
+            <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
+        </svg>
+    </span>
+    
+
+</div>
+
+
+<button @onclick=Increase>Increase</button>
+<button @onclick=Decrease>Decrease</button>
+
+@Num
+
+@code {
+    long Percentage = 0;
+    long Num = 0;
+    string ColSpan = "col-start-auto";
+
+    void Increase()
+    {
+        if ((Num + 1) >= 4) {
+            Num = 4;
+            ColSpan = "col-span-full";
+            return;
+        }
+
+        Num += 1;
+        ColSpan = $"col-span-{Num}";
+        StateHasChanged();
+    }
+
+    void Decrease()
+    {
+
+        if((Num-1) <= 0)
+        {
+            Num = 0;
+            ColSpan = "col-start-auto";
+            return;
+        }
+        Num -= 1;
+        ColSpan = $"col-span-{Num}";
+        StateHasChanged();  
+    }
+
+}
