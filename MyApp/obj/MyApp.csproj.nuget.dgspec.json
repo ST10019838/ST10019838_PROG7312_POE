@@ -68,7 +68,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.Components.WebView.Maui": {
               "target": "Package",
-              "version": "[8.0.82, )"
+              "version": "[8.0.72, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -76,21 +76,17 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.82, )"
+              "version": "[8.0.72, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.82, )"
+              "version": "[8.0.72, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )",
               "autoReferenced": true
-            },
-            "TailwindMerge.NET": {
-              "target": "Package",
-              "version": "[0.3.0, )"
             }
           },
           "imports": [
@@ -119,7 +115,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.Components.WebView.Maui": {
               "target": "Package",
-              "version": "[8.0.82, )"
+              "version": "[8.0.72, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -127,21 +123,17 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.82, )"
+              "version": "[8.0.72, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.82, )"
+              "version": "[8.0.72, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )",
               "autoReferenced": true
-            },
-            "TailwindMerge.NET": {
-              "target": "Package",
-              "version": "[0.3.0, )"
             }
           },
           "imports": [
@@ -170,7 +162,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.Components.WebView.Maui": {
               "target": "Package",
-              "version": "[8.0.82, )"
+              "version": "[8.0.72, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -178,21 +170,17 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.82, )"
+              "version": "[8.0.72, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.82, )"
+              "version": "[8.0.72, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )",
               "autoReferenced": true
-            },
-            "TailwindMerge.NET": {
-              "target": "Package",
-              "version": "[0.3.0, )"
             }
           },
           "imports": [
@@ -222,7 +210,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.Components.WebView.Maui": {
               "target": "Package",
-              "version": "[8.0.82, )"
+              "version": "[8.0.72, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -230,15 +218,11 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.82, )"
+              "version": "[8.0.72, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.82, )"
-            },
-            "TailwindMerge.NET": {
-              "target": "Package",
-              "version": "[0.3.0, )"
+              "version": "[8.0.72, )"
             }
           },
           "imports": [
