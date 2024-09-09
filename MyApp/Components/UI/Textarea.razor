@@ -1,43 +1,23 @@
 ﻿
-
 <div>
-    <label for="@Id" class="block text-sm font-medium text-gray-900">
+    <label for="@Id" class="block text-sm font-medium text-gray-700">
         @Id
 
         @if (IsRequired)
         {
             <span class="text-red-500">*</span>
         }
+
     </label>
 
+    <textarea id="@Id"
+              class="mt-2 w-full resize-none rounded-lg border-gray-200 align-top shadow-sm sm:text-sm"
+              rows="4"
+              placeholder="@Placeholder"
+              @bind="@Value"
+              @bind:event="oninput" />
 
-    <!-- 
-        The following event binding was adapted from medium.com
-        Author: Andrejs Abrickis
-        Link: https://medium.com/swlh/blazor-components-communication-pattern-7b14e54cd3f8
-    -->
-    <select name="@Id"
-            id="@Id"
-            class="mt-1.5 w-full rounded-lg border-gray-300 text-gray-700 sm:text-sm"
-           
-            @bind="@Value"
-            @bind:event="onchange"
-    >
-    <!--
-        The following option was adapted from stackoverflow.com
-        Author: David
-        Link: https://stackoverflow.com/questions/5805059/how-do-i-make-a-placeholder-for-a-select-box
-    -->
-        <option disabled selected >Please select</option>
-
-        @foreach (var item in Values)
-        {
-            <option value="@item">@item</option>
-        }
-
-    </select>
 </div>
-
 
 @code {
     // The following 2-way binding was adapted from stackoverflow.com
@@ -84,10 +64,4 @@
 
     [Parameter]
     public bool IsRequired { get; set; } = false;
-
-
-
-    [EditorRequired]
-    [Parameter]
-    public string[] Values { get; set; }
 }

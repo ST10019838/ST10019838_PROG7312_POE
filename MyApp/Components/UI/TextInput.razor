@@ -1,7 +1,5 @@
-﻿
-
-<div>
-    <label for="@Id" class="block text-sm font-medium text-gray-900">
+﻿<div>
+    <label for="@Id" class="block text-xs font-medium text-gray-700">
         @Id
 
         @if (IsRequired)
@@ -10,32 +8,17 @@
         }
     </label>
 
-
-    <!-- 
-        The following event binding was adapted from medium.com
-        Author: Andrejs Abrickis
-        Link: https://medium.com/swlh/blazor-components-communication-pattern-7b14e54cd3f8
-    -->
-    <select name="@Id"
-            id="@Id"
-            class="mt-1.5 w-full rounded-lg border-gray-300 text-gray-700 sm:text-sm"
-           
-            @bind="@Value"
-            @bind:event="onchange"
-    >
     <!--
-        The following option was adapted from stackoverflow.com
-        Author: David
-        Link: https://stackoverflow.com/questions/5805059/how-do-i-make-a-placeholder-for-a-select-box
+        The following binding was adapted from stackoverflow.com
+        Author: dani herrera
+        Link: https://stackoverflow.com/questions/58222480/change-variable-value-on-input-key-press-on-blazor
     -->
-        <option disabled selected >Please select</option>
-
-        @foreach (var item in Values)
-        {
-            <option value="@item">@item</option>
-        }
-
-    </select>
+    <input type="@Type"
+           id="@Id"
+           placeholder="@Placeholder"
+           class="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+           @bind="@Value" 
+           @bind:event="oninput" />
 </div>
 
 
@@ -75,9 +58,9 @@
     [Parameter]
     public string Id { get; set; }
 
-
     [Parameter]
     public string Placeholder { get; set; } = "";
+
 
     [Parameter]
     public bool? IsValid { get; set; }
@@ -85,9 +68,15 @@
     [Parameter]
     public bool IsRequired { get; set; } = false;
 
-
-
-    [EditorRequired]
     [Parameter]
-    public string[] Values { get; set; }
+    public InputType Type { get; set; } = InputType.text;
+
+    public enum InputType
+    {
+        text,
+        date,
+        color,
+        email,
+        file
+    }
 }

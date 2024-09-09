@@ -29,10 +29,10 @@ else
     public bool UsePill { get; set; }
 
     [Parameter]
-    public Action? Method { get; set; }
+    public EventCallback? OnClick { get; set; }
 
     private void Invoke()
     {
-        Method?.Invoke();
+        OnClick?.InvokeAsync();
     }
 }

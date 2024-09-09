@@ -52,6 +52,7 @@ dotnet_bot.scale-125.png
 dotnet_bot.scale-150.png
 dotnet_bot.scale-200.png
 dotnet_bot.scale-400.png
+screenshot.scale-100.png
 splashSplashScreen.scale-100.png
 splashSplashScreen.scale-125.png
 splashSplashScreen.scale-150.png
@@ -66,4 +67,5 @@ tailwind.extension.json
 wwwroot\css\app.css
 wwwroot\favicon.png
 wwwroot\index.html
+wwwroot\screenshot.png
 wwwroot\tailwind.css

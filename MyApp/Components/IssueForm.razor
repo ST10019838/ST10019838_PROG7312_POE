@@ -1,0 +1,110 @@
+﻿@using MyApp.Models;
+@using MyApp.Components.UI
+
+
+<EditForm Model="Issue" @ref=Form >
+    <DataAnnotationsValidator />
+
+    <TextInput Id="Location" @bind-Value="@Issue.Location"
+               IsValid="IsValid(FieldIdentifier.Create(() => Issue.Location))"
+               FormContext="Form.EditContext" IsRequired="true" />
+    <ValidationMessage For="() => Issue.Location" />
+
+
+    <Textarea Id="Description" @bind-Value="@Issue.Description"
+              IsValid="IsValid(FieldIdentifier.Create(() => Issue.Description))"
+              FormContext="Form.EditContext" IsRequired="true" />
+    <ValidationMessage For="() => Issue.Description" />
+
+
+    <Select Id="Places" Values="IssueCategories.Array" @bind-Value="@Issue.Category"
+            IsValid="IsValid(FieldIdentifier.Create(() => Issue.Category))"
+            FormContext="Form.EditContext" IsRequired="true" />
+    <ValidationMessage For="() => Issue.Category" />
+
+
+    <InputFile OnChange="@LoadFiles"  accept=".png,.jpg,.jpeg,.pdf"/>
+
+
+    <input type="submit" class="btn btn-primary" value="Save" />
+</EditForm>
+
+
+<!--
+    FieldIdentifier Creation was adapted from stackoverflow.com
+    Author: dani herrera
+    Link: https://stackoverflow.com/questions/72430616/blazor-editcontext-how-to-check-validation-message-for-nested-object
+-->
+
+
+@code {
+
+    // The following file funcitons were adapted from youtube.com
+    // Author: Claudio Bernasconi
+    // Link: https://www.youtube.com/watch?v=a4vUjyf-sjQ
+    const int MAX_FILESIZE = 5000 * 1024; // 5 MB
+
+    private async Task LoadFiles(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+
+        if (file == null) return;
+
+        string FileName = file.Name;
+        long FileSize = file.Size;
+        string FileType = file.ContentType;
+        DateTimeOffset LastModified = file.LastModified;
+
+        try
+        {
+            var fileStream = file.OpenReadStream(MAX_FILESIZE);
+
+            var randomFile = Path.GetTempFileName();
+            var extension = Path.GetExtension(file.Name);
+            var targetFilePath = Path.ChangeExtension(randomFile, extension);
+
+            var targetStream = new FileStream(targetFilePath, FileMode.Create);
+            await fileStream.CopyToAsync(targetStream);
+            targetStream.Close();
+        }
+        catch (Exception exception)
+        {
+
+        }
+    }
+
+    // private async Task LoadFiles()
+    // {
+    //     var result = await FilePicker.PickAsync(new PickOptions
+    //         {
+    //             PickerTitle = "Pick File Please",
+    //             FileTypes = FilePickerFileType.Images
+
+    //         }
+    //     );
+
+    //     if (result == null) return;
+
+    //     image = result.FullPath.ToString();
+
+    //     StateHasChanged();
+    // }
+
+
+    private Issue Issue = new Issue();
+
+    EditForm Form = new EditForm();
+
+
+
+    private bool IsValid(FieldIdentifier field)
+    {
+        return Form.EditContext.IsValid(field);
+    }
+
+    private IEnumerable<string> ErrorMessage(FieldIdentifier field)
+    {
+        return Form?.EditContext?.GetValidationMessages(field);
+    }
+
+}
