@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using TailwindMerge.Extensions;
 
 namespace MyApp
 {
@@ -15,6 +16,7 @@ namespace MyApp
                 });
 
             builder.Services.AddMauiBlazorWebView();
+            builder.Services.AddTailwindMerge();
 
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();
