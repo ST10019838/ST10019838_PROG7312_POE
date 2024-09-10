@@ -35,7 +35,9 @@ C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-maccatal
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.dll
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Essentials.dll
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Graphics.dll
+C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\LruCacheNet.dll
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\System.IO.Pipelines.dll
+C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\TailwindMerge.dll
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\ar\Microsoft.Maui.Controls.resources.dll
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\ca\Microsoft.Maui.Controls.resources.dll
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-maccatalyst\maccatalyst-x64\cs\Microsoft.Maui.Controls.resources.dll

@@ -30,25 +30,25 @@
     <AppXManifest Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-09-09T22:28:43.847</Modified>
+      <Modified>2024-09-10T08:54:15.110</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-09-09T20:31:34.458</Modified>
+      <Modified>2024-09-10T08:45:51.112</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MyApp.runtimeconfig.json">
       <PackagePath>MyApp.runtimeconfig.json</PackagePath>
-      <Modified>2024-09-09T20:31:34.297</Modified>
+      <Modified>2024-09-10T08:46:14.411</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MyApp.dll">
       <PackagePath>MyApp.dll</PackagePath>
-      <Modified>2024-09-09T22:28:43.648</Modified>
+      <Modified>2024-09-10T08:54:14.934</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>MyApp.exe</PackagePath>
-      <Modified>2024-09-09T22:28:43.653</Modified>
+      <Modified>2024-09-10T08:54:14.939</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -68,27 +68,27 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\tailwind.css">
       <PackagePath>wwwroot\tailwind.css</PackagePath>
-      <Modified>2024-09-09T22:17:07.615</Modified>
+      <Modified>2024-09-10T08:52:55.483</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2024-09-06T14:25:53.251</Modified>
+      <Modified>2024-09-10T08:45:48.544</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2024-09-06T14:25:53.272</Modified>
+      <Modified>2024-09-10T08:45:48.555</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2024-09-06T14:25:53.297</Modified>
+      <Modified>2024-09-10T08:45:48.570</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2024-09-06T14:25:53.328</Modified>
+      <Modified>2024-09-10T08:45:48.594</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2024-09-06T14:25:53.425</Modified>
+      <Modified>2024-09-10T08:45:48.690</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -96,207 +96,207 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2024-09-09T14:29:56.371</Modified>
+      <Modified>2024-09-10T08:45:50.018</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.366</Modified>
+      <Modified>2024-09-10T08:45:50.013</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.366</Modified>
+      <Modified>2024-09-10T08:45:50.013</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.366</Modified>
+      <Modified>2024-09-10T08:45:50.012</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.366</Modified>
+      <Modified>2024-09-10T08:45:50.012</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.365</Modified>
+      <Modified>2024-09-10T08:45:50.012</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.369</Modified>
+      <Modified>2024-09-10T08:45:50.016</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.369</Modified>
+      <Modified>2024-09-10T08:45:50.016</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.368</Modified>
+      <Modified>2024-09-10T08:45:50.016</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.369</Modified>
+      <Modified>2024-09-10T08:45:50.016</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.369</Modified>
+      <Modified>2024-09-10T08:45:50.016</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.369</Modified>
+      <Modified>2024-09-10T08:45:50.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.369</Modified>
+      <Modified>2024-09-10T08:45:50.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.369</Modified>
+      <Modified>2024-09-10T08:45:50.016</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.369</Modified>
+      <Modified>2024-09-10T08:45:50.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.369</Modified>
+      <Modified>2024-09-10T08:45:50.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.371</Modified>
+      <Modified>2024-09-10T08:45:50.018</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.370</Modified>
+      <Modified>2024-09-10T08:45:50.018</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.370</Modified>
+      <Modified>2024-09-10T08:45:50.018</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.370</Modified>
+      <Modified>2024-09-10T08:45:50.018</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.370</Modified>
+      <Modified>2024-09-10T08:45:50.018</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.370</Modified>
+      <Modified>2024-09-10T08:45:50.018</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.370</Modified>
+      <Modified>2024-09-10T08:45:50.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.370</Modified>
+      <Modified>2024-09-10T08:45:50.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.370</Modified>
+      <Modified>2024-09-10T08:45:50.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.370</Modified>
+      <Modified>2024-09-10T08:45:50.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.367</Modified>
+      <Modified>2024-09-10T08:45:50.014</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.367</Modified>
+      <Modified>2024-09-10T08:45:50.014</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.367</Modified>
+      <Modified>2024-09-10T08:45:50.014</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.367</Modified>
+      <Modified>2024-09-10T08:45:50.014</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.367</Modified>
+      <Modified>2024-09-10T08:45:50.014</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.368</Modified>
+      <Modified>2024-09-10T08:45:50.015</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.368</Modified>
+      <Modified>2024-09-10T08:45:50.015</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.368</Modified>
+      <Modified>2024-09-10T08:45:50.015</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.367</Modified>
+      <Modified>2024-09-10T08:45:50.015</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.367</Modified>
+      <Modified>2024-09-10T08:45:50.014</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.368</Modified>
+      <Modified>2024-09-10T08:45:50.016</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.368</Modified>
+      <Modified>2024-09-10T08:45:50.015</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.368</Modified>
+      <Modified>2024-09-10T08:45:50.015</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.368</Modified>
+      <Modified>2024-09-10T08:45:50.015</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.368</Modified>
+      <Modified>2024-09-10T08:45:50.015</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.367</Modified>
+      <Modified>2024-09-10T08:45:50.013</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.366</Modified>
+      <Modified>2024-09-10T08:45:50.013</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.366</Modified>
+      <Modified>2024-09-10T08:45:50.013</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.366</Modified>
+      <Modified>2024-09-10T08:45:50.013</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.366</Modified>
+      <Modified>2024-09-10T08:45:50.013</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.371</Modified>
+      <Modified>2024-09-10T08:45:50.019</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.371</Modified>
+      <Modified>2024-09-10T08:45:50.019</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.371</Modified>
+      <Modified>2024-09-10T08:45:50.019</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.371</Modified>
+      <Modified>2024-09-10T08:45:50.019</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2024-09-09T14:29:56.371</Modified>
+      <Modified>2024-09-10T08:45:50.019</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\package-lock.json">
       <PackagePath>package-lock.json</PackagePath>
@@ -312,7 +312,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MyApp.deps.json">
       <PackagePath>MyApp.deps.json</PackagePath>
-      <Modified>2024-09-09T20:31:34.200</Modified>
+      <Modified>2024-09-10T08:46:14.408</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\djdar\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.34\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -688,11 +688,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\MyApp.styles.css">
       <PackagePath>wwwroot\MyApp.styles.css</PackagePath>
-      <Modified>2024-09-06T14:25:51.629</Modified>
+      <Modified>2024-09-10T08:45:44.174</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\MyApp.bundle.scp.css">
       <PackagePath>wwwroot\MyApp.bundle.scp.css</PackagePath>
-      <Modified>2024-09-06T14:25:51.630</Modified>
+      <Modified>2024-09-10T08:45:44.175</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\Components\Layout\MainLayout.razor.css">
       <PackagePath>Components\Layout\MainLayout.razor.css</PackagePath>

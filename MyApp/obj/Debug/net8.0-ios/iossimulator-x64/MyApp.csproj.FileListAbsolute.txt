@@ -35,7 +35,9 @@ C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-ios\ioss
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.Maui.dll
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.Maui.Essentials.dll
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-ios\iossimulator-x64\Microsoft.Maui.Graphics.dll
+C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-ios\iossimulator-x64\LruCacheNet.dll
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-ios\iossimulator-x64\System.IO.Pipelines.dll
+C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-ios\iossimulator-x64\TailwindMerge.dll
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-ios\iossimulator-x64\ar\Microsoft.Maui.Controls.resources.dll
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-ios\iossimulator-x64\ca\Microsoft.Maui.Controls.resources.dll
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-ios\iossimulator-x64\cs\Microsoft.Maui.Controls.resources.dll
@@ -279,6 +281,7 @@ C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-ios\ioss
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet-nativeaot.a
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet.a
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet.dylib
+C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-ios\iossimulator-x64\build-signature\signature
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-ios\iossimulator-x64\staticwebassets.build.json
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-ios\iossimulator-x64\staticwebassets.development.json
 C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-ios\iossimulator-x64\staticwebassets\msbuild.MyApp.Microsoft.AspNetCore.StaticWebAssets.props

@@ -9,7 +9,12 @@
     <div class=@Tw.Merge("place-self-center justify-self-end", (Num >= 4) ? "text-blue-600" : "text-gray-600")>100%</div>
 
     <div class="-z-20 row-start-2 col-start-1 col-span-full h-1 rounded-full bg-gray-200" />
-    <div class="@Tw.Merge("-z-10 row-start-2 col-start-1 h-1 rounded-full bg-blue-500 transition-all", ColSpan)" />
+    <div class="@Tw.Merge("-z-10 row-start-2 col-span-auto h-1 rounded-full bg-blue-500",
+        (Num >= 1) ? "col-span-1 col-start-1" : "",
+        (Num >= 2) ? "col-span-2" : "",
+        (Num >= 3) ? "col-span-3" : "",
+        (Num >= 4) ? "col-span-full" : ""
+        )" />
 
 
     <span class=@Tw.Merge("row-start-2 col-start-1 place-self-center justify-self-end rounded-full text-white", (Num >= 1) ? "bg-blue-600" : "bg-gray-600")>
@@ -22,7 +27,7 @@
                   clip-rule="evenodd" />
         </svg>
     </span>
-   
+
     <span class=@Tw.Merge("row-start-2 col-start-2 place-self-center justify-self-end rounded-full text-white", (Num >= 2) ? "bg-blue-600" : "bg-gray-600")>
         <svg class="size-5"
              xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +60,7 @@
                   clip-rule="evenodd" />
         </svg>
     </span>
-    
+
 
 </div>
 
@@ -68,11 +73,12 @@
 @code {
     long Percentage = 0;
     long Num = 0;
-    string ColSpan = "col-start-auto";
+    string ColSpan = "";
 
     void Increase()
     {
-        if ((Num + 1) >= 4) {
+        if ((Num + 1) >= 4)
+        {
             Num = 4;
             ColSpan = "col-span-full";
             return;
@@ -86,7 +92,7 @@
     void Decrease()
     {
 
-        if((Num-1) <= 0)
+        if ((Num - 1) <= 0)
         {
             Num = 0;
             ColSpan = "col-start-auto";
@@ -94,7 +100,7 @@
         }
         Num -= 1;
         ColSpan = $"col-span-{Num}";
-        StateHasChanged();  
+        StateHasChanged();
     }
 
 }
