@@ -1,23 +1,18 @@
 ﻿@using TailwindMerge;
 @inject TwMerge Tw;
 
-<div class="grid-rows-2 grid-cols-4 grid items-center gap-y-2">
+<div class=@Tw.Merge("grid-rows-2 grid-cols-4 grid items-center gap-y-1", Class)>
 
-    <div class=@Tw.Merge("place-self-center justify-self-end", (Num >= 1) ? "text-blue-600" : "text-gray-600")>25%</div>
-    <div class=@Tw.Merge("place-self-center justify-self-end", (Num >= 2) ? "text-blue-600" : "text-gray-600")>50%</div>
-    <div class=@Tw.Merge("place-self-center justify-self-end", (Num >= 3) ? "text-blue-600" : "text-gray-600")>75%</div>
-    <div class=@Tw.Merge("place-self-center justify-self-end", (Num >= 4) ? "text-blue-600" : "text-gray-600")>100%</div>
-
-    <div class="-z-20 row-start-2 col-start-1 col-span-full h-1 rounded-full bg-gray-200" />
-    <div class="@Tw.Merge("-z-10 row-start-2 col-span-auto h-1 rounded-full bg-blue-500",
-        (Num >= 1) ? "col-span-1 col-start-1" : "",
-        (Num >= 2) ? "col-span-2" : "",
-        (Num >= 3) ? "col-span-3" : "",
-        (Num >= 4) ? "col-span-full" : ""
+    <div class="-z-20 row-start-1 col-start-1 col-span-full h-1 rounded-full bg-gray-200" />
+    <div class="@Tw.Merge("-z-10 row-start-1 col-span-auto h-1 rounded-full bg-blue-500",
+        (Progress >= 1) ? "col-span-1 col-start-1" : "",
+        (Progress >= 2) ? "col-span-2" : "",
+        (Progress >= 3) ? "col-span-3" : "",
+        (Progress >= 4) ? "col-span-full" : ""
         )" />
 
 
-    <span class=@Tw.Merge("row-start-2 col-start-1 place-self-center justify-self-end rounded-full text-white", (Num >= 1) ? "bg-blue-600" : "bg-gray-600")>
+    <span class=@Tw.Merge("row-start-1 col-start-1 place-self-center justify-self-end rounded-full text-white", (Progress >= 1) ? "bg-blue-600" : "bg-gray-600")>
         <svg class="size-5"
              xmlns="http://www.w3.org/2000/svg"
              viewBox="0 0 20 20"
@@ -28,7 +23,7 @@
         </svg>
     </span>
 
-    <span class=@Tw.Merge("row-start-2 col-start-2 place-self-center justify-self-end rounded-full text-white", (Num >= 2) ? "bg-blue-600" : "bg-gray-600")>
+    <span class=@Tw.Merge("row-start-1 col-start-2 place-self-center justify-self-end rounded-full text-white", (Progress >= 2) ? "bg-blue-600" : "bg-gray-600")>
         <svg class="size-5"
              xmlns="http://www.w3.org/2000/svg"
              viewBox="0 0 20 20"
@@ -39,7 +34,7 @@
         </svg>
     </span>
 
-    <span class=@Tw.Merge("row-start-2 col-start-3 place-self-center justify-self-end rounded-full text-white", (Num >= 3) ? "bg-blue-600" : "bg-gray-600")>
+    <span class=@Tw.Merge("row-start-1 col-start-3 place-self-center justify-self-end rounded-full text-white", (Progress >= 3) ? "bg-blue-600" : "bg-gray-600")>
         <svg class="size-5"
              xmlns="http://www.w3.org/2000/svg"
              viewBox="0 0 20 20"
@@ -50,7 +45,7 @@
         </svg>
     </span>
 
-    <span class=@Tw.Merge("row-start-2 col-start-4 place-self-center justify-self-end rounded-full text-white", (Num >= 4) ? "bg-blue-600" : "bg-gray-600")>
+    <span class=@Tw.Merge("row-start-1 col-start-4 place-self-center justify-self-end rounded-full text-white", (Progress >= 4) ? "bg-blue-600" : "bg-gray-600")>
         <svg class="size-5"
              xmlns="http://www.w3.org/2000/svg"
              viewBox="0 0 20 20"
@@ -61,46 +56,21 @@
         </svg>
     </span>
 
+    <div class="row-start-2 col-start-1 place-self-center justify-self-start text-black">Progress:</div>
+    <div class="row-start-2 col-start-4 place-self-center justify-self-end text-black">@($"{(Progress * 100)/4}%")</div>
+    <!--
 
+    <div class=@Tw.Merge("place-self-center justify-self-end left-1/2 -translate-x-1/2", (Progress >= 1) ? "text-blue-600" : "text-gray-600")>25%</div>
+    <div class=@Tw.Merge("place-self-center justify-self-end", (Progress >= 2) ? "text-blue-600" : "text-gray-600")>50%</div>
+    <div class=@Tw.Merge("place-self-center justify-self-end", (Progress >= 3) ? "text-blue-600" : "text-gray-600")>75%</div>
+    <div class=@Tw.Merge("place-self-center justify-self-end", (Progress >= 4) ? "text-blue-600" : "text-gray-600")>100%</div>
+    -->
 </div>
 
-
-<button @onclick=Increase>Increase</button>
-<button @onclick=Decrease>Decrease</button>
-
-@Num
-
 @code {
-    long Percentage = 0;
-    long Num = 0;
-    string ColSpan = "";
+    [Parameter]
+    public int Progress { get; set; }
 
-    void Increase()
-    {
-        if ((Num + 1) >= 4)
-        {
-            Num = 4;
-            ColSpan = "col-span-full";
-            return;
-        }
-
-        Num += 1;
-        ColSpan = $"col-span-{Num}";
-        StateHasChanged();
-    }
-
-    void Decrease()
-    {
-
-        if ((Num - 1) <= 0)
-        {
-            Num = 0;
-            ColSpan = "col-start-auto";
-            return;
-        }
-        Num -= 1;
-        ColSpan = $"col-span-{Num}";
-        StateHasChanged();
-    }
-
+    [Parameter]
+    public string Class { get; set; }
 }

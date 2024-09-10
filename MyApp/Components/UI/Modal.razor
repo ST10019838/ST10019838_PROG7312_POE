@@ -1,0 +1,54 @@
+﻿@using TailwindMerge;
+@inject TwMerge Tw;
+
+
+@if (IsVisible)
+{
+    <section class="bg-black/50 absolute left-0 top-0 flex h-screen w-screen items-center justify-center"
+             @onmousedown=CloseModal>
+        <aside class=@Tw.Merge("z-50 flex flex-col items-center rounded-md border bg-white border-gray-200 gap-4 rounded-lg p-5 max-w-[450px] w-full", Class)
+            @onmousedown:stopPropagation>
+            <div class="bottom flex w-full items-center justify-between">
+                <div class="text-xl font-medium">
+                    @Title
+                </div>
+
+                <button class="rounded bg-white p-1 hover:bg-gray-200" @onclick=CloseModal>
+                    <span class="sr-only">Close</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-6" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd"
+                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                              clipRule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="h-0.5 w-full rounded-full bg-gray-200" />
+
+            <div class="w-full">
+                @Children
+            </div>
+
+        </aside>
+    </section>
+}
+
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = "Modal";
+
+    [Parameter]
+    public RenderFragment Children { get; set; }
+
+    [Parameter]
+    public bool IsVisible { get; set; } = true;
+
+    [Parameter]
+    public string Class { get; set; }
+
+    private void CloseModal()
+    {
+        IsVisible = false;
+    }
+}

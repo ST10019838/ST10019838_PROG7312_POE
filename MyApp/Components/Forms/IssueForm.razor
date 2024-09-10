@@ -1,33 +1,37 @@
 ﻿@using MyApp.Models;
 @using MyApp.Components.UI
+@using System.ComponentModel.DataAnnotations
 
 
-<EditForm Model="Issue" @ref=Form >
+<EditForm EditContext="@Context" class="flex w-full flex-col justify-center gap-5">
     <DataAnnotationsValidator />
 
     <TextInput Id="Location" @bind-Value="@Issue.Location"
-               IsValid="IsValid(FieldIdentifier.Create(() => Issue.Location))"
-               FormContext="Form.EditContext" IsRequired="true" />
-    <ValidationMessage For="() => Issue.Location" />
+               FormContext="Context" IsRequired="true"
+               Validation="@(() => Validate<string>("Location",Issue.Location))" />
 
 
     <Textarea Id="Description" @bind-Value="@Issue.Description"
-              IsValid="IsValid(FieldIdentifier.Create(() => Issue.Description))"
-              FormContext="Form.EditContext" IsRequired="true" />
-    <ValidationMessage For="() => Issue.Description" />
+              FormContext="Context" IsRequired="true"
+              Validation="@(() => Validate("Description", Issue.Description))" />
 
 
     <Select Id="Places" Values="IssueCategories.Array" @bind-Value="@Issue.Category"
-            IsValid="IsValid(FieldIdentifier.Create(() => Issue.Category))"
-            FormContext="Form.EditContext" IsRequired="true" />
-    <ValidationMessage For="() => Issue.Category" />
+            FormContext="Context" IsRequired="true"
+            Validation="@(() => Validate("Category", Issue.Category))" />
 
 
-    <InputFile OnChange="@LoadFiles"  accept=".png,.jpg,.jpeg,.pdf"/>
+    <InputFile OnChange="@LoadFiles" accept=".png,.jpg,.jpeg,.pdf" />
 
 
-    <input type="submit" class="btn btn-primary" value="Save" />
+
+    <div class="flex w-full flex-col items-center justify-center gap-2">
+        <Button Class="w-full" Disabled="@(Progress <= 2)" Text="Submit" />
+
+        <ProgressBar Progress="@Progress" Class="w-full" />
+    </div>
 </EditForm>
+
 
 
 <!--
@@ -36,8 +40,73 @@
     Link: https://stackoverflow.com/questions/72430616/blazor-editcontext-how-to-check-validation-message-for-nested-object
 -->
 
-
 @code {
+    List<ValidationResult> results = new List<ValidationResult>();
+    int Num = 0;
+
+
+    Dictionary<string, int> FieldValidity = new Dictionary<string, int>();
+    int Progress = 0;
+
+    protected override void OnInitialized()
+    {
+        Issue = new Issue();
+        Context = new EditContext(Issue);
+
+        // The validity of each field is initially set to 0 to indicate
+        // that the field is not yet valid. A valid field is represented
+        // by 1. The use of numbers to indicate validity will enable
+        // total progress on the form to be caluculated by adding 
+        // all of the valid fields together.
+        foreach (var property in typeof(Issue).GetProperties())
+        {
+            FieldValidity.Add(property.Name, 0);
+        }
+
+        Toast idk = new Toast();
+    }
+
+    // The following function was adapted from code project.com
+    // Author: Juan Francisco Morales Larios
+    // Link: https://www.codeproject.com/Articles/1184173/DataAnnotations-in-Depth#CustomValidationAttributes
+    private async Task<List<ValidationResult>?> Validate<T>(string name, T value)
+    {
+        ValidationContext valContext = new ValidationContext(Issue, null, null)
+            {
+                MemberName = name
+            };
+
+        List<ValidationResult> validationResults = new List<ValidationResult>();
+
+        bool isValid = Validator.TryValidateProperty(value, valContext, validationResults);
+
+        if (isValid)
+        {
+            FieldValidity[name] = 1;
+        } else
+        {
+            FieldValidity[name] = 0;
+        }
+
+        CalculateProgress();
+
+        // Returns a error message if the field is invalid
+        return validationResults.Any() ? validationResults : null;
+    }
+
+    // The form's completion progress is calculated by adding the total number of valid fields together.
+    // This total is then used to determine how far the progress bar should display.
+    private void CalculateProgress()
+    {
+        int totalValidFields = 0;
+        foreach (var item in FieldValidity)
+        {
+            totalValidFields += item.Value;
+        }
+
+        Progress = totalValidFields;
+    }
+
 
     // The following file funcitons were adapted from youtube.com
     // Author: Claudio Bernasconi
@@ -91,20 +160,22 @@
     // }
 
 
-    private Issue Issue = new Issue();
+    private Issue? Issue;
 
     EditForm Form = new EditForm();
 
+    private EditContext? Context { get; set; }
 
 
+   
     private bool IsValid(FieldIdentifier field)
     {
-        return Form.EditContext.IsValid(field);
+        return Context.IsValid(field);
     }
 
     private IEnumerable<string> ErrorMessage(FieldIdentifier field)
     {
-        return Form?.EditContext?.GetValidationMessages(field);
+        return Context?.GetValidationMessages(field);
     }
 
 }

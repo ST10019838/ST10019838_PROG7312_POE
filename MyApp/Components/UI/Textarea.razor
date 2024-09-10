@@ -1,4 +1,8 @@
-﻿
+﻿@using System.ComponentModel.DataAnnotations
+@using TailwindMerge;
+@inject TwMerge Tw;
+
+
 <div>
     <label for="@Id" class="block text-sm font-medium text-gray-700">
         @Id
@@ -11,12 +15,13 @@
     </label>
 
     <textarea id="@Id"
-              class="mt-2 w-full resize-none rounded-lg border-gray-200 align-top shadow-sm sm:text-sm"
+              class=@Tw.Merge("mt-2 w-full resize-none rounded-lg border-gray-200 align-top shadow-sm sm:text-sm", IsValid ? "border-gray-200 focus:border-blue-500" : "border-red-500 focus:border-red-500")
               rows="4"
               placeholder="@Placeholder"
               @bind="@Value"
               @bind:event="oninput" />
 
+    <div class="mt-1 text-sm text-red-500">@ErrorMessage</div>
 </div>
 
 @code {
@@ -36,17 +41,32 @@
         set => SetValue(value);
     }
 
+    bool IsValid { get; set; } = true;
+    private string ErrorMessage { get; set; }
+
     private async Task SetValue(string value)
     {
         if (_value == value) return;
         _value = value;
         await ValueChanged.InvokeAsync(value);
-        FormContext?.Validate();
+        var result = await Validation();
+
+        if (result is null)
+        {
+            IsValid = true;
+            ErrorMessage = "";
+            return;
+        }
+
+        IsValid = false;
+        ErrorMessage = result[0]?.ErrorMessage;
     }
 
     [Parameter]
     public EventCallback<string> ValueChanged { get; set; }
 
+    [Parameter]
+    public Func<Task<List<ValidationResult>>> Validation { get; set; }
 
     [Parameter]
     public EditContext? FormContext { get; set; }
@@ -59,8 +79,7 @@
     [Parameter]
     public string Placeholder { get; set; } = "";
 
-    [Parameter]
-    public bool? IsValid { get; set; }
+    
 
     [Parameter]
     public bool IsRequired { get; set; } = false;
