@@ -21,9 +21,10 @@
             Validation="@(() => Validate("Category", Issue.Category))" />
 
 
-    <InputFile OnChange="@LoadFiles" accept=".png,.jpg,.jpeg,.pdf" />
 
 
+    <FileInput Id="Attatch File(s)" FormContext="Context" IsRequired="true"
+               Validation="@(() => Validate("MediaAttachment", Issue.MediaAttachment))" />
 
     <div class="flex w-full flex-col items-center justify-center gap-2">
         <Button Class="w-full" Disabled="@(Progress <= 2)" Text="Submit" />
@@ -108,56 +109,7 @@
     }
 
 
-    // The following file funcitons were adapted from youtube.com
-    // Author: Claudio Bernasconi
-    // Link: https://www.youtube.com/watch?v=a4vUjyf-sjQ
-    const int MAX_FILESIZE = 5000 * 1024; // 5 MB
-
-    private async Task LoadFiles(InputFileChangeEventArgs e)
-    {
-        var file = e.File;
-
-        if (file == null) return;
-
-        string FileName = file.Name;
-        long FileSize = file.Size;
-        string FileType = file.ContentType;
-        DateTimeOffset LastModified = file.LastModified;
-
-        try
-        {
-            var fileStream = file.OpenReadStream(MAX_FILESIZE);
-
-            var randomFile = Path.GetTempFileName();
-            var extension = Path.GetExtension(file.Name);
-            var targetFilePath = Path.ChangeExtension(randomFile, extension);
-
-            var targetStream = new FileStream(targetFilePath, FileMode.Create);
-            await fileStream.CopyToAsync(targetStream);
-            targetStream.Close();
-        }
-        catch (Exception exception)
-        {
-
-        }
-    }
-
-    // private async Task LoadFiles()
-    // {
-    //     var result = await FilePicker.PickAsync(new PickOptions
-    //         {
-    //             PickerTitle = "Pick File Please",
-    //             FileTypes = FilePickerFileType.Images
-
-    //         }
-    //     );
-
-    //     if (result == null) return;
-
-    //     image = result.FullPath.ToString();
-
-    //     StateHasChanged();
-    // }
+   
 
 
     private Issue? Issue;

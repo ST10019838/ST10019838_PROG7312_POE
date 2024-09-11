@@ -1,0 +1,194 @@
+﻿@using System.ComponentModel.DataAnnotations
+@using TailwindMerge;
+@inject TwMerge Tw;
+
+
+<div>
+    <label for="@Id" class="block text-sm font-medium text-black">
+        @Id
+
+        @if (IsRequired)
+        {
+            <span class="text-red-500">*</span>
+        }
+    </label>
+
+    <InputFile id="@Id" OnChange="@LoadFiles" accept=".png,.jpg,.jpeg,.pdf" multiple
+               class="border-input bg-background mt-1 flex w-full rounded-md border px-3 py-2 text-sm shadow-sm
+transition-colors file:border-0 file:bg-transparent file:text-foreground file:text-sm file:font-medium
+placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1
+focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />
+
+
+    <div class="mt-1 text-sm text-red-500">@ErrorMessage</div>
+
+</div>
+
+
+@foreach (var file in loadedFiles)
+{
+    <li>
+        <ul>
+            <li>Name: @file.Name</li>
+            <li>Last modified: @file.LastModified.ToString()</li>
+            <li>Size (bytes): @file.Size</li>
+            <li>Content type: @file.ContentType</li>
+        </ul>
+    </li>
+}
+
+
+@code {
+    [EditorRequired]
+    [Parameter]
+    public string Id { get; set; }
+
+
+    [Parameter]
+    public string Placeholder { get; set; } = "";
+
+
+    [Parameter]
+    public bool IsRequired { get; set; } = false;
+
+
+    // The following 2-way binding was adapted from stackoverflow.com
+    // Author: dani herrera
+    // Link: https://stackoverflow.com/questions/57932850/how-to-make-two-way-binding-on-blazor-component
+    private string _value;
+
+    // The following "async" setter was adapted from medium.com
+    // Author: Abhinn Mishra
+    // Link: https://medium.com/@mishraabhinn/best-way-to-deal-with-async-call-and-await-in-property-setter-in-c-learn-it-in-easy-way-cdd353502387
+    [Parameter]
+    public string Value
+    {
+        get => _value;
+        set => SetValue(value);
+    }
+
+    bool IsValid { get; set; } = true;
+    private string ErrorMessage { get; set; }
+
+    private async Task SetValue(string value)
+    {
+        if (_value == value) return;
+        _value = value;
+        await ValueChanged.InvokeAsync(value);
+
+        var result = await Validation();
+
+        if (result is null)
+        {
+            IsValid = true;
+            ErrorMessage = "";
+            return;
+        }
+
+        IsValid = false;
+        ErrorMessage = result[0]?.ErrorMessage;
+    }
+
+    [Parameter]
+    public EventCallback<string> ValueChanged { get; set; }
+
+    // The following parameter was adapted from stackoverflow.com
+    // Author: Vencovsky
+    // Link: https://stackoverflow.com/questions/61345648/how-to-get-return-value-from-eventcallback-in-blazor
+    [Parameter]
+    public Func<Task<List<ValidationResult>>> Validation { get; set; }
+
+
+
+    [Parameter]
+    public EditContext? FormContext { get; set; }
+
+
+
+    // private List<IBrowserFile> loadedFiles = new();
+    // private long maxFileSize = 1024 * 15;
+    // private int maxAllowedFiles = 3;
+    // private bool isLoading;
+
+    // private void LoadFiles(InputFileChangeEventArgs e)
+    // {
+    //     isLoading = true;
+    //     loadedFiles.Clear();
+
+    //     foreach (var file in e.GetMultipleFiles(maxAllowedFiles))
+    //     {
+    //         try
+    //         {
+    //             loadedFiles.Add(file);
+    //         }
+    //         catch (Exception ex)
+    //         {
+
+    //         }
+    //     }
+
+    //     isLoading = false;
+    // }
+
+
+
+
+    // The following file funcitons were adapted from youtube.com
+    // Author: Claudio Bernasconi
+    // Link: https://www.youtube.com/watch?v=a4vUjyf-sjQ
+    const int MAX_FILESIZE = 5000 * 1024; // 5 MB
+    private int maxAllowedFiles = 3;
+
+    List<IBrowserFile> loadedFiles = new();
+
+    private async Task LoadFiles(InputFileChangeEventArgs e)
+    {
+        try
+        {
+            var browserFiles = e.GetMultipleFiles(maxAllowedFiles);
+
+            foreach (var file in browserFiles)
+            {
+                if (file == null) continue;
+
+                loadedFiles.Add(file);
+
+                string FileName = file.Name;
+                long FileSize = file.Size;
+                string FileType = file.ContentType;
+                DateTimeOffset LastModified = file.LastModified;
+
+
+                var fileStream = file.OpenReadStream(MAX_FILESIZE);
+
+                var directories = AppDomain.CurrentDomain.BaseDirectory.Split("\\").ToList();
+                var indexOfRootPath = directories.IndexOf(directories.Where(item => item.Equals("MyApp")).Last());
+
+                string rootPath = "";
+
+                foreach (var item in directories.GetRange(0, indexOfRootPath + 1))
+                {
+                    rootPath = rootPath + item + "\\";
+                }
+
+                var newFileName = Path.GetRandomFileName();
+                var newFileExtension = Path.GetExtension(file.Name);
+                var newFile = Path.ChangeExtension(newFileName, newFileExtension);
+
+                var newFilePath = Path.Combine(rootPath, "wwwroot", "files", newFile);
+
+
+                await using FileStream targetStream = new FileStream(newFilePath, FileMode.Create);
+                await fileStream.CopyToAsync(targetStream);
+                fileStream.Close();
+                targetStream.Close();
+
+            }
+        }
+        catch (Exception exception)
+        {
+            ErrorMessage = exception.Message;
+        }
+
+    }
+}

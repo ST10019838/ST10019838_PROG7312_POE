@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-09-10T22:26:20.657</Modified>
+      <Modified>2024-09-11T13:13:29.529</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-09-10T08:45:51.112</Modified>
+      <Modified>2024-09-11T13:08:22.933</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MyApp.runtimeconfig.json">
       <PackagePath>MyApp.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MyApp.dll">
       <PackagePath>MyApp.dll</PackagePath>
-      <Modified>2024-09-10T22:26:20.492</Modified>
+      <Modified>2024-09-11T13:12:49.951</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>MyApp.exe</PackagePath>
-      <Modified>2024-09-10T22:26:20.496</Modified>
+      <Modified>2024-09-11T13:12:49.955</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -62,13 +62,33 @@
       <PackagePath>wwwroot\favicon.png</PackagePath>
       <Modified>2024-09-06T14:25:37.904</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\14r5g4ws.jpeg">
+      <PackagePath>wwwroot\files\14r5g4ws.jpeg</PackagePath>
+      <Modified>2024-09-11T13:02:14.854</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\4xzxzd3z.png">
+      <PackagePath>wwwroot\files\4xzxzd3z.png</PackagePath>
+      <Modified>2024-09-11T13:06:19.710</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\bhjyyv1j.pdf">
+      <PackagePath>wwwroot\files\bhjyyv1j.pdf</PackagePath>
+      <Modified>2024-09-11T13:07:31.325</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\ikni4hpg.png">
+      <PackagePath>wwwroot\files\ikni4hpg.png</PackagePath>
+      <Modified>2024-09-11T13:06:19.718</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\pw1dbefu.png">
+      <PackagePath>wwwroot\files\pw1dbefu.png</PackagePath>
+      <Modified>2024-09-11T13:06:19.732</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
       <Modified>2024-09-10T16:59:38.023</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\tailwind.css">
       <PackagePath>wwwroot\tailwind.css</PackagePath>
-      <Modified>2024-09-10T22:14:12.274</Modified>
+      <Modified>2024-09-11T13:11:14.514</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
@@ -312,7 +332,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MyApp.deps.json">
       <PackagePath>MyApp.deps.json</PackagePath>
-      <Modified>2024-09-10T08:46:14.408</Modified>
+      <Modified>2024-09-11T12:28:05.808</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\djdar\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.34\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>

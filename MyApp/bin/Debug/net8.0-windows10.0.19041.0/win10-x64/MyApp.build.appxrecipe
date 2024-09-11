@@ -46,6 +46,21 @@
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\favicon.png">
       <PackagePath>wwwroot\favicon.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\14r5g4ws.jpeg">
+      <PackagePath>wwwroot\files\14r5g4ws.jpeg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\4xzxzd3z.png">
+      <PackagePath>wwwroot\files\4xzxzd3z.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\bhjyyv1j.pdf">
+      <PackagePath>wwwroot\files\bhjyyv1j.pdf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\ikni4hpg.png">
+      <PackagePath>wwwroot\files\ikni4hpg.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\pw1dbefu.png">
+      <PackagePath>wwwroot\files\pw1dbefu.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
     </AppxPackagedFile>

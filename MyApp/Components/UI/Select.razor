@@ -4,7 +4,7 @@
 
 
 <div>
-    <label for="@Id" class="block text-sm font-medium text-gray-900">
+    <label for="@Id" class="block text-sm font-medium text-black">
         @Id
 
         @if (IsRequired)
@@ -84,6 +84,10 @@
 
     [Parameter]
     public EventCallback<string> ValueChanged { get; set; }
+
+    // The following parameter was adapted from stackoverflow.com
+    // Author: Vencovsky
+    // Link: https://stackoverflow.com/questions/61345648/how-to-get-return-value-from-eventcallback-in-blazor
 
     [Parameter]
     public Func<Task<List<ValidationResult>>> Validation { get; set; }
