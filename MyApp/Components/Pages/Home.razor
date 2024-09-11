@@ -1,17 +1,37 @@
 ﻿@page "/"
 @using MyApp.Components.Forms
 @using MyApp.Components.UI
+@using MyApp.Models
 
 <!--
     The Iframe was adapted from stackoverflow.com
     Author: gilly3 (https://stackoverflow.com/users/361684/gilly3)
     Link: https://stackoverflow.com/questions/22024115/is-it-possible-to-view-any-file-type-within-a-webpage
+    <iframe src="files/" class="h-auto w-[300px]" />
 -->
-<iframe src="files/" class="h-auto w-[300px]" />
+
+@foreach(var issue in Issues)
+{
+    <IssueReportCard Issue="@issue" />
+}
 
 
-<FileInput Id="Attatch File(s)"  IsRequired="true"/>
+<button @onclick=RefreshIssues >Refresh</button>
 
 @code {
+    private List<Issue> Issues { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        // add to the NavigationManager event
+        Issues = Repository.GetIssues();
+    }
+
+    private void RefreshIssues()
+    {
+        Issues = Repository.GetIssues();
+        StateHasChanged();
+    }
 
 }

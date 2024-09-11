@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Components.Forms;
+using System.ComponentModel.DataAnnotations;
 
 namespace MyApp.Models
 {
@@ -18,7 +19,7 @@ namespace MyApp.Models
         public string Description { get; set; }
 
 
-        public string? MediaAttachment { get; set; } // Change data type
+        public IBrowserFile[]? MediaAttachments { get; set; } = new IBrowserFile[2];
     }
 
 

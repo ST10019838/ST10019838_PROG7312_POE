@@ -1,5 +1,6 @@
 ﻿@using System.ComponentModel.DataAnnotations
 @using TailwindMerge;
+@using Models;
 @inject TwMerge Tw;
 
 
@@ -13,29 +14,22 @@
         }
     </label>
 
+    <!--
+        The following reset was adapted from github
+        Author: georgehemmings (https://github.com/georgehemmings)
+        Link: https://github.com/dotnet/aspnetcore/issues/29979
+    -->
     <InputFile id="@Id" OnChange="@LoadFiles" accept=".png,.jpg,.jpeg,.pdf" multiple
                class="border-input bg-background mt-1 flex w-full rounded-md border px-3 py-2 text-sm shadow-sm
 transition-colors file:border-0 file:bg-transparent file:text-foreground file:text-sm file:font-medium
 placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1
-focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />
+focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+               @onclick="ResetValue"/>
 
 
     <div class="mt-1 text-sm text-red-500">@ErrorMessage</div>
 
 </div>
-
-
-@foreach (var file in loadedFiles)
-{
-    <li>
-        <ul>
-            <li>Name: @file.Name</li>
-            <li>Last modified: @file.LastModified.ToString()</li>
-            <li>Size (bytes): @file.Size</li>
-            <li>Content type: @file.ContentType</li>
-        </ul>
-    </li>
-}
 
 
 @code {
@@ -55,140 +49,96 @@ focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" />
     // The following 2-way binding was adapted from stackoverflow.com
     // Author: dani herrera
     // Link: https://stackoverflow.com/questions/57932850/how-to-make-two-way-binding-on-blazor-component
-    private string _value;
+    private IBrowserFile[] _value = new MediaAttachment[MediaAttachment.Settings.MAX_ALLOWEDFILES];
+
 
     // The following "async" setter was adapted from medium.com
     // Author: Abhinn Mishra
     // Link: https://medium.com/@mishraabhinn/best-way-to-deal-with-async-call-and-await-in-property-setter-in-c-learn-it-in-easy-way-cdd353502387
     [Parameter]
-    public string Value
+    public IBrowserFile[] Value
     {
         get => _value;
         set => SetValue(value);
     }
 
-    bool IsValid { get; set; } = true;
+
+    bool IsValid { get; set; } = false;
+
     private string ErrorMessage { get; set; }
 
-    private async Task SetValue(string value)
+    private async Task SetValue(IBrowserFile[] value)
     {
         if (_value == value) return;
         _value = value;
+
+        
         await ValueChanged.InvokeAsync(value);
 
-        var result = await Validation();
-
-        if (result is null)
-        {
-            IsValid = true;
-            ErrorMessage = "";
-            return;
-        }
-
-        IsValid = false;
-        ErrorMessage = result[0]?.ErrorMessage;
+        await Validation.InvokeAsync(IsValid);
     }
 
     [Parameter]
-    public EventCallback<string> ValueChanged { get; set; }
+    public EventCallback<IBrowserFile[]> ValueChanged { get; set; }
 
-    // The following parameter was adapted from stackoverflow.com
-    // Author: Vencovsky
-    // Link: https://stackoverflow.com/questions/61345648/how-to-get-return-value-from-eventcallback-in-blazor
+
     [Parameter]
-    public Func<Task<List<ValidationResult>>> Validation { get; set; }
-
+    public EventCallback<bool> Validation { get; set; }
 
 
     [Parameter]
     public EditContext? FormContext { get; set; }
 
 
-
-    // private List<IBrowserFile> loadedFiles = new();
-    // private long maxFileSize = 1024 * 15;
-    // private int maxAllowedFiles = 3;
-    // private bool isLoading;
-
-    // private void LoadFiles(InputFileChangeEventArgs e)
-    // {
-    //     isLoading = true;
-    //     loadedFiles.Clear();
-
-    //     foreach (var file in e.GetMultipleFiles(maxAllowedFiles))
-    //     {
-    //         try
-    //         {
-    //             loadedFiles.Add(file);
-    //         }
-    //         catch (Exception ex)
-    //         {
-
-    //         }
-    //     }
-
-    //     isLoading = false;
-    // }
-
-
-
-
     // The following file funcitons were adapted from youtube.com
     // Author: Claudio Bernasconi
     // Link: https://www.youtube.com/watch?v=a4vUjyf-sjQ
-    const int MAX_FILESIZE = 5000 * 1024; // 5 MB
-    private int maxAllowedFiles = 3;
-
-    List<IBrowserFile> loadedFiles = new();
-
     private async Task LoadFiles(InputFileChangeEventArgs e)
     {
         try
         {
-            var browserFiles = e.GetMultipleFiles(maxAllowedFiles);
+            var newValue = new IBrowserFile[MediaAttachment.Settings.MAX_ALLOWEDFILES];
 
+            var browserFiles = e.GetMultipleFiles(MediaAttachment.Settings.MAX_ALLOWEDFILES);
+
+            int position = 0;
             foreach (var file in browserFiles)
             {
                 if (file == null) continue;
 
-                loadedFiles.Add(file);
-
-                string FileName = file.Name;
-                long FileSize = file.Size;
-                string FileType = file.ContentType;
-                DateTimeOffset LastModified = file.LastModified;
-
-
-                var fileStream = file.OpenReadStream(MAX_FILESIZE);
-
-                var directories = AppDomain.CurrentDomain.BaseDirectory.Split("\\").ToList();
-                var indexOfRootPath = directories.IndexOf(directories.Where(item => item.Equals("MyApp")).Last());
-
-                string rootPath = "";
-
-                foreach (var item in directories.GetRange(0, indexOfRootPath + 1))
-                {
-                    rootPath = rootPath + item + "\\";
-                }
-
-                var newFileName = Path.GetRandomFileName();
-                var newFileExtension = Path.GetExtension(file.Name);
-                var newFile = Path.ChangeExtension(newFileName, newFileExtension);
-
-                var newFilePath = Path.Combine(rootPath, "wwwroot", "files", newFile);
-
-
-                await using FileStream targetStream = new FileStream(newFilePath, FileMode.Create);
-                await fileStream.CopyToAsync(targetStream);
+                var fileStream = file.OpenReadStream(MediaAttachment.Settings.MAX_FILESIZE);
                 fileStream.Close();
-                targetStream.Close();
+
+                // MediaAttachment newAttachment = new()
+                //     {
+                //         Name = Path.GetRandomFileName(),
+                //         Size = file.Size,
+                //         ContentType = file.ContentType,
+                //         LastModified = file.LastModified
+                //     };
+
+                // newValue[position++] = newAttachment;
+                newValue[position++] = file;
 
             }
+
+            IsValid = true;
+
+            Value = newValue;
         }
         catch (Exception exception)
         {
+            IsValid = false;
+            Value = new MediaAttachment[MediaAttachment.Settings.MAX_ALLOWEDFILES];
             ErrorMessage = exception.Message;
         }
 
+    }
+
+
+    void ResetValue()
+    {
+        IsValid = false;
+        Value = new MediaAttachment[MediaAttachment.Settings.MAX_ALLOWEDFILES];
     }
 }

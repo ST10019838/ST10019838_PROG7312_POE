@@ -1,5 +1,6 @@
 ﻿@using MyApp.Components.UI
 @using MyApp.Components.Forms
+@using MyApp.Models
 @using TailwindMerge
 @inject NavigationManager Nav
 @inject TwMerge Tw
@@ -17,7 +18,7 @@
             <div class="px-2">
                 <div class="py-4">
                     <a class="t group relative flex cursor-pointer justify-center rounded px-2 py-1.5 hover:text-blue-700 hover:bg-blue-50"
-                       @onclick=ShowModal>
+                       @onclick="ShowModal" @onclick:stopPropagation @onclick:preventDefault>
                         <svg xmlns="http://www.w3.org/2000/svg"
                              width="24"
                              height="24"
@@ -27,9 +28,9 @@
                              stroke-width="2" stroke-linecap="round"
                              stroke-linejoin="round"
                              class="lucide lucide-message-square-warning @(Nav.BaseUri.EndsWith("") ? "opacity-75" : "opcacity-50")">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                                <path d="M12 7v2" />
-                                <path d="M12 13h.01" />
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            <path d="M12 7v2" />
+                            <path d="M12 13h.01" />
                         </svg>
 
                         <span class="-translate-y-1/2 group-hover:visible invisible absolute start-full top-1/2 ms-4 min-w-max rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white">
@@ -42,18 +43,18 @@
                     <li>
                         <a href=""
                            class="@Tw.Merge(Classes, (Nav.Uri.EndsWith("") ? ActiveRouteClasses: InactiveRouteClasses))">
-                            
+
                             <svg xmlns="http://www.w3.org/2000/svg"
                                  width="24" height="24"
                                  viewBox="0 0 24 24" fill="none"
                                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                  class="lucide lucide-clipboard-list @(Nav.BaseUri.EndsWith("") ? "opacity-75" : "opcacity-50")">
-                                    <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
-                                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-                                    <path d="M12 11h4" />
-                                    <path d="M12 16h4" />
-                                    <path d="M8 11h.01" />
-                                    <path d="M8 16h.01" />
+                                <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                                <path d="M12 11h4" />
+                                <path d="M12 16h4" />
+                                <path d="M8 11h.01" />
+                                <path d="M8 16h.01" />
                             </svg>
 
                             <span class="-translate-y-1/2 group-hover:visible invisible absolute start-full top-1/2 ms-4 min-w-max rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white">
@@ -63,22 +64,21 @@
                     </li>
 
                     <li>
-                        <a
-                           class="@Tw.Merge(Classes, (Nav.Uri.EndsWith("local-events-and-announcements") ? ActiveRouteClasses : "opacity-50"))">
+                        <a class="@Tw.Merge(Classes, (Nav.Uri.EndsWith("local-events-and-announcements") ? ActiveRouteClasses : "opacity-50"))">
 
-                            
-                           <svg xmlns="http://www.w3.org/2000/svg" 
-                                width="24" height="24" 
-                                viewBox="0 0 24 24" 
-                                fill="none" stroke="currentColor" 
-                                stroke-width="2" 
-                                stroke-linecap="round" 
-                                stroke-linejoin="round"
+
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="24" height="24"
+                                 viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
                                  class="lucide lucide-bell-ring @(Nav.BaseUri.EndsWith("counter") ? "opacity-75" : "opacity-50")">
-                                    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
-                                    <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
-                                    <path d="M4 2C2.8 3.7 2 5.7 2 8" />
-                                    <path d="M22 8c0-2.3-.8-4.3-2-6" />
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+                                <path d="M4 2C2.8 3.7 2 5.7 2 8" />
+                                <path d="M22 8c0-2.3-.8-4.3-2-6" />
                             </svg>
 
                             <span class="-translate-y-1/2 group-hover:visible invisible absolute start-full top-1/2 ms-4 min-w-max rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white">
@@ -88,24 +88,23 @@
                     </li>
 
                     <li>
-                        <a
-                           class="@Tw.Merge(Classes, (Nav.Uri.EndsWith("service-request-status") ? ActiveRouteClasses : "opacity-50"))">
-                            <svg xmlns="http://www.w3.org/2000/svg" 
-                                width="24"
-                                height="24" 
-                                viewBox="0 0 24 24" 
-                                fill="none" 
-                                stroke="currentColor" 
-                                stroke-width="2" 
-                                stroke-linecap="round" 
-                                stroke-linejoin="round"
+                        <a class="@Tw.Merge(Classes, (Nav.Uri.EndsWith("service-request-status") ? ActiveRouteClasses : "opacity-50"))">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="24"
+                                 height="24"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
                                  class="lucide lucide-hand-platter @(Nav.BaseUri.EndsWith("service-request-status") ? "opacity-75" : "opacity-50")">
-                                    <path d="M12 3V2" />
-                                    <path d="M5 10a7.1 7.1 0 0 1 14 0" />
-                                    <path d="M4 10h16" />
-                                    <path d="M2 14h12a2 2 0 1 1 0 4h-2" />
-                                    <path d="m15.4 17.4 3.2-2.8a2 2 0 0 1 2.8 2.9l-3.6 3.3c-.7.8-1.7 1.2-2.8 1.2h-4c-1.1 0-2.1-.4-2.8-1.2L5 18" />
-                                    <path d="M5 14v7H2" />
+                                <path d="M12 3V2" />
+                                <path d="M5 10a7.1 7.1 0 0 1 14 0" />
+                                <path d="M4 10h16" />
+                                <path d="M2 14h12a2 2 0 1 1 0 4h-2" />
+                                <path d="m15.4 17.4 3.2-2.8a2 2 0 0 1 2.8 2.9l-3.6 3.3c-.7.8-1.7 1.2-2.8 1.2h-4c-1.1 0-2.1-.4-2.8-1.2L5 18" />
+                                <path d="M5 14v7H2" />
                             </svg>
 
                             <span class="-translate-y-1/2 group-hover:visible invisible absolute start-full top-1/2 ms-4 min-w-max rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white">
@@ -144,18 +143,23 @@
 </div>
 
 
+
 <Modal IsVisible="@ModalIsVisible" Title="Report An Issue">
     <Children>
-        <IssueForm />
+        <IssueForm OnSubmit="@((issue) => SubmitForm(issue))"
+                   OnComplete="@(() => ShowToast())" />
     </Children>
 </Modal>
+
+
+<Toast Text="@ToastMessage" IsVisible="@ToastIsVisible" Mode="@ToastMode" />
 
 @code {
     string ActiveRouteClasses = "text-blue-700 bg-blue-50 hover:text-blue-700 hover:bg-blue-50";
     string InactiveRouteClasses = "hover:bg-gray-50 text-gray-500 hover:text-gray-700";
     string Classes = $"group relative flex justify-center rounded px-2 py-1.5";
 
-    
+
     bool ModalIsVisible { get; set; } = false;
     public void ShowModal()
     {
@@ -164,7 +168,7 @@
 
     void NavigateTo(string path)
     {
-        Nav.NavigateTo(path);  
+        Nav.NavigateTo(path);
     }
 
     // The following functions were adapted from stackoverflow.com
@@ -187,5 +191,38 @@
     {
         // remove from the NavigationManager event
         Nav.LocationChanged -= HandleLocationChanged;
+    }
+
+
+    private bool ToastIsVisible = false;
+    private string ToastMessage = "";
+    private Toast.ToastMode ToastMode = Toast.ToastMode.Success;
+
+    private Response ResponseForToast { get; set; } = new()
+        {
+            Success = true,
+            Message = "Saved Successfully!"
+        };
+
+
+    private async Task SubmitForm(Issue newIssue)
+    {
+        var response = await Repository.AddIssue(newIssue);
+
+        ModalIsVisible = false;
+    }
+
+
+    private async Task ShowToast()
+    {
+        if (ResponseForToast.Success) ToastMode = Toast.ToastMode.Success;
+        else ToastMode = Toast.ToastMode.Failure;
+
+        ToastMessage = ResponseForToast.Message;
+        ToastIsVisible = true;
+
+        await Task.Delay(3000);
+
+        ToastIsVisible = false;
     }
 }

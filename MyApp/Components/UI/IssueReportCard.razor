@@ -1,0 +1,107 @@
+﻿@using MyApp.Models
+
+<article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+    <!--
+    <img alt=""
+         src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+         class="h-56 w-full object-cover" />
+    -->
+
+
+    <div class="bg-white p-4 sm:p-6">
+        <time datetime="2022-10-10" class="block text-xs text-gray-500"> @Issue.Category </time>
+
+        <a href="#">
+            <h3 class="mt-0.5 text-lg text-gray-900">@Issue.Location</h3>
+        </a>
+
+        <p class="line-clamp-3 text-sm/relaxed mt-2 text-gray-500">
+            <!--
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus
+            pariatur animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis quidem,
+            mollitia itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius atque
+            dignissimos. Molestias explicabo corporis voluptatem?
+            -->
+            
+            @Issue.Description
+        </p>
+    </div>
+
+    <div>
+        File Names:
+
+        @foreach (var item in Issue.MediaAttachments)
+        {
+            @if (item is null) continue;
+
+            @item.Name ;;; @item.Size
+
+        }
+    </div>
+
+    <div @onclick=ShowModal>Show Image(s)</div>
+</article>
+
+<Modal IsVisible="@ModalIsVisible" Title="View Attachments">
+    <Children>
+        @foreach (var path in filePaths)
+        {
+            @if (path is null) continue;
+
+            <!-- <img src="@path" class="h-auto w-[300px]" /> -->
+
+
+            <iframe src="@path" class="h-auto w-[300px]" />
+             
+
+        }
+
+        <iframe src="@imagePath" class="h-auto w-[300px]" />
+
+    </Children>
+</Modal>
+
+
+
+@code {
+    [Parameter]
+    public Issue Issue { get; set; }
+
+    public bool ModalIsVisible { get; set; } = false;
+
+    string[] filePaths { get; set; }
+
+    // protected override void OnInitialized()
+    // {
+    //     files = Issue.MediaAttachments;
+    // }
+
+    string? imagePath { get; set; } = null;
+
+    public void ShowModal()
+    {
+        filePaths = new string[Issue.MediaAttachments.Length];
+
+        for (int i = 0; i < Issue.MediaAttachments.Length; i++)
+        {
+            if (Issue.MediaAttachments[i] is null) continue;
+
+            <!-- <iframe src="@("files/" + item.Name)" class="h-auto w-[300px]" />-->
+
+            // <img src="@("files/" + item.Name)" class="h-auto w-[300px]" />
+
+            filePaths[i] = "files\\" + Issue.MediaAttachments[i].Name;
+        }
+
+        string rootPath = Repository.GetRootPath();
+
+        imagePath = Path.Combine(rootPath, "wwwroot", "files", Issue.MediaAttachments[0].Name);
+
+        ModalIsVisible = true;
+
+
+        // imagePath = $"files/{Issue.MediaAttachments[0].Name}";
+
+        StateHasChanged();
+    }
+}

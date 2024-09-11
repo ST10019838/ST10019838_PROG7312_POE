@@ -21,18 +21,19 @@
             Validation="@(() => Validate("Category", Issue.Category))" />
 
 
+    <FileInput Id="Attach Media" @bind-Value="@Issue.MediaAttachments"
+               FormContext="Context"
+               Validation="@((valid) => Validate("MediaAttachments", Issue.MediaAttachments, isValid: valid, true))" />
 
-
-    <FileInput Id="Attatch File(s)" FormContext="Context" IsRequired="true"
-               Validation="@(() => Validate("MediaAttachment", Issue.MediaAttachment))" />
 
     <div class="flex w-full flex-col items-center justify-center gap-2">
-        <Button Class="w-full" Disabled="@(Progress <= 2)" Text="Submit" />
+        <Button Class="w-full" Disabled="@(Progress <= 2)" 
+        IsLoading="@IsSubmitting" LoadingText="Submitting Form..."
+        Text="Submit" OnClick="@(() => SubmitForm())" />
 
         <ProgressBar Progress="@Progress" Class="w-full" />
     </div>
 </EditForm>
-
 
 
 <!--
@@ -40,11 +41,10 @@
     Author: dani herrera
     Link: https://stackoverflow.com/questions/72430616/blazor-editcontext-how-to-check-validation-message-for-nested-object
 -->
-
 @code {
-    List<ValidationResult> results = new List<ValidationResult>();
-    int Num = 0;
+    private Issue? Issue;
 
+    private EditContext? Context { get; set; }
 
     Dictionary<string, int> FieldValidity = new Dictionary<string, int>();
     int Progress = 0;
@@ -57,7 +57,7 @@
         // The validity of each field is initially set to 0 to indicate
         // that the field is not yet valid. A valid field is represented
         // by 1. The use of numbers to indicate validity will enable
-        // total progress on the form to be caluculated by adding 
+        // total progress on the form to be caluculated by adding
         // all of the valid fields together.
         foreach (var property in typeof(Issue).GetProperties())
         {
@@ -67,10 +67,11 @@
         Toast idk = new Toast();
     }
 
+
     // The following function was adapted from code project.com
     // Author: Juan Francisco Morales Larios
     // Link: https://www.codeproject.com/Articles/1184173/DataAnnotations-in-Depth#CustomValidationAttributes
-    private async Task<List<ValidationResult>?> Validate<T>(string name, T value)
+    private async Task<List<ValidationResult>?> Validate<T>(string name, T value, bool isValid = false, bool validatedExternally = false)
     {
         ValidationContext valContext = new ValidationContext(Issue, null, null)
             {
@@ -79,20 +80,29 @@
 
         List<ValidationResult> validationResults = new List<ValidationResult>();
 
-        bool isValid = Validator.TryValidateProperty(value, valContext, validationResults);
+        if (validatedExternally)
+        {
+            SetFieldValidity(isValid, name);
+        }
+        else
+        {
+            isValid = Validator.TryValidateProperty(value, valContext, validationResults);
 
-        if (isValid)
-        {
-            FieldValidity[name] = 1;
-        } else
-        {
-            FieldValidity[name] = 0;
+            SetFieldValidity(isValid, name);
         }
 
         CalculateProgress();
 
         // Returns a error message if the field is invalid
         return validationResults.Any() ? validationResults : null;
+    }
+
+    private void SetFieldValidity(bool isValid, string name)
+    {
+        if (isValid)
+            FieldValidity[name] = 1;
+        else
+            FieldValidity[name] = 0;
     }
 
     // The form's completion progress is calculated by adding the total number of valid fields together.
@@ -108,26 +118,22 @@
         Progress = totalValidFields;
     }
 
+    [Parameter]
+    public EventCallback<Issue> OnSubmit { get; set; }
 
-   
+    [Parameter]
+    public EventCallback<Issue> OnComplete { get; set; }
 
+    private bool IsSubmitting = false;
 
-    private Issue? Issue;
-
-    EditForm Form = new EditForm();
-
-    private EditContext? Context { get; set; }
-
-
-   
-    private bool IsValid(FieldIdentifier field)
+    private async Task SubmitForm()
     {
-        return Context.IsValid(field);
-    }
+        IsSubmitting = true;
 
-    private IEnumerable<string> ErrorMessage(FieldIdentifier field)
-    {
-        return Context?.GetValidationMessages(field);
-    }
+        await OnSubmit.InvokeAsync(Issue);
 
+        IsSubmitting = false;
+
+        await OnComplete.InvokeAsync();
+    }
 }
