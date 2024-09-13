@@ -5,6 +5,7 @@
 @inject NavigationManager Nav
 @inject TwMerge Tw
 @implements IDisposable
+@inject StateContainer StateContainer
 
 <div class="flex h-screen w-16 flex-col justify-between border-e bg-white">
     <div>
@@ -74,7 +75,7 @@
                                  stroke-width="2"
                                  stroke-linecap="round"
                                  stroke-linejoin="round"
-                                 class="lucide lucide-bell-ring @(Nav.BaseUri.EndsWith("counter") ? "opacity-75" : "opacity-50")">
+                                 class="lucide lucide-bell-ring @(Nav.BaseUri.EndsWith("local-events-and-announcements") ? "opacity-75" : "opacity-50")">
                                 <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
                                 <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
                                 <path d="M4 2C2.8 3.7 2 5.7 2 8" />
@@ -144,7 +145,7 @@
 
 
 
-<Modal IsVisible="@ModalIsVisible" Title="Report An Issue">
+<Modal IsVisible="@ModalIsVisible" OnClose="@CloseModal" Title="Report An Issue">
     <Children>
         <IssueForm OnSubmit="@((issue) => SubmitForm(issue))"
                    OnComplete="@(() => ShowToast())" />
@@ -166,6 +167,11 @@
         ModalIsVisible = true;
     }
 
+    public void CloseModal()
+    {
+        ModalIsVisible = false;
+    }
+
     void NavigateTo(string path)
     {
         Nav.NavigateTo(path);
@@ -185,12 +191,14 @@
     {
         // add to the NavigationManager event
         Nav.LocationChanged += HandleLocationChanged;
+        StateContainer.OnChange += StateHasChanged;
     }
 
     public void Dispose()
     {
         // remove from the NavigationManager event
         Nav.LocationChanged -= HandleLocationChanged;
+        StateContainer.OnChange -= StateHasChanged;
     }
 
 
@@ -208,6 +216,9 @@
     private async Task SubmitForm(Issue newIssue)
     {
         var response = await Repository.AddIssue(newIssue);
+
+        // Sets the issues state to the issues stored in the repository 
+        StateContainer.Issues = new();
 
         ModalIsVisible = false;
     }

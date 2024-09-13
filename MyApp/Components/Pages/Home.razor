@@ -2,6 +2,8 @@
 @using MyApp.Components.Forms
 @using MyApp.Components.UI
 @using MyApp.Models
+@implements IDisposable
+@inject StateContainer StateContainer
 
 <!--
     The Iframe was adapted from stackoverflow.com
@@ -10,7 +12,7 @@
     <iframe src="files/" class="h-auto w-[300px]" />
 -->
 
-@foreach(var issue in Issues)
+@foreach (var issue in StateContainer.Issues)
 {
     <IssueReportCard Issue="@issue" />
 }
@@ -19,18 +21,25 @@
 <button @onclick=RefreshIssues >Refresh</button>
 
 @code {
-    private List<Issue> Issues { get; set; }
+    // private List<Issue> Issues { get; set; }
 
 
     protected override void OnInitialized()
     {
         // add to the NavigationManager event
-        Issues = Repository.GetIssues();
+        // Issues = Repository.GetIssues();
+
+        StateContainer.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        StateContainer.OnChange -= StateHasChanged;
     }
 
     private void RefreshIssues()
     {
-        Issues = Repository.GetIssues();
+        // Issues = Repository.GetIssues();
         StateHasChanged();
     }
 

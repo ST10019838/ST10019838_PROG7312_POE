@@ -5,7 +5,7 @@
 @if (IsVisible)
 {
     <section class="bg-black/50 absolute left-0 top-0 flex h-screen w-screen items-center justify-center"
-             @onmousedown=CloseModal>
+             @onmousedown=OnClose>
         <aside class=@Tw.Merge("z-50 flex flex-col items-center rounded-md border bg-white border-gray-200 gap-4 rounded-lg p-5 max-w-[450px] w-full", Class)
             @onmousedown:stopPropagation>
             <div class="bottom flex w-full items-center justify-between">
@@ -13,7 +13,7 @@
                     @Title
                 </div>
 
-                <button class="rounded bg-white p-1 hover:bg-gray-200" @onclick=CloseModal>
+                <button class="rounded bg-white p-1 hover:bg-gray-200" @onclick=OnClose>
                     <span class="sr-only">Close</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="size-6" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd"
@@ -47,8 +47,7 @@
     [Parameter]
     public string Class { get; set; }
 
-    private void CloseModal()
-    {
-        IsVisible = false;
-    }
+
+    [Parameter]
+    public EventCallback OnClose { get; set; }
 }

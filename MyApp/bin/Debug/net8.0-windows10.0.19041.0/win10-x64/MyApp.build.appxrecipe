@@ -46,14 +46,8 @@
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\favicon.png">
       <PackagePath>wwwroot\favicon.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\f0vlikih.jpeg">
-      <PackagePath>wwwroot\files\f0vlikih.jpeg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\rouk5hro.jpeg">
-      <PackagePath>wwwroot\files\rouk5hro.jpeg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\zsceksrt.jpeg">
-      <PackagePath>wwwroot\files\zsceksrt.jpeg</PackagePath>
+    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\rkpttjbe.jpeg">
+      <PackagePath>wwwroot\files\rkpttjbe.jpeg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>

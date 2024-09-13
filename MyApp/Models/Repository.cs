@@ -2,7 +2,8 @@
 
 namespace MyApp.Models
 {
-    internal static class Repository
+
+    public static class Repository
     {
         public static List<Issue> _issues = new List<Issue>();
 
