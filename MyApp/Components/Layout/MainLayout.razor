@@ -1,40 +1,27 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page focus:outline-none focus:border-gray-200 focus:ring-0">
+<div class="page h-full max-h-screen focus:outline-none focus:border-gray-200 focus:ring-0 sm:block">
     <!--
         <div class="sidebar">
             <NavMenu />
         </div>
 
-
-
-
-    -->
-
     <div class="hidden sm:block">
         <SideMenu />
     </div>
 
-    <div class="sticky top-0 flex flex-col items-center justify-center gap-2 bg-white pt-5 sm:hidden">
+    <div class="flex flex-col items-center justify-center gap-2 bg-white pt-5 sm:hidden">
         <DropdownMenu />
 
         <div class="mb-1 h-0.5 w-3/5 rounded-full bg-gray-200"/>
     </div>
+    -->
 
-    <main class="p-5">
-
-
-        <!--
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
-        <article class="content h-full px-4">
-
-        </article>
-        -->
+    <NavMenu />
+    
+    <div class="grow overflow-auto p-5 sm:h-full sm:max-h-screen">
         @Body
-
-
-    </main>
+    </div>
+    
 </div>
+

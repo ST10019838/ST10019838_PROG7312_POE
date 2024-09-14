@@ -27,7 +27,7 @@
 
 
     <div class="flex w-full flex-col items-center justify-center gap-2">
-        <Button Class="w-full" Disabled="@(Progress <= 2)" 
+        <Button Class="w-full" Disabled="@(Progress <= 2 || !DataIsValid)" 
         IsLoading="@IsSubmitting" LoadingText="Submitting Form..."
         Text="Submit" OnClick="@(() => SubmitForm())" />
 
@@ -48,6 +48,7 @@
 
     Dictionary<string, int> FieldValidity = new Dictionary<string, int>();
     int Progress = 0;
+    bool DataIsValid = false;
 
     protected override void OnInitialized()
     {
@@ -97,12 +98,22 @@
         return validationResults.Any() ? validationResults : null;
     }
 
+    // The canStillSubmitForm variable is used to determine whether or not
+    // the form data can be submitted even if the data is invalid.
+    // eg: the media attachment in the form is not required and thus,
+    // the user should still be able to submit even if no attachment has been provided.
     private void SetFieldValidity(bool isValid, string name)
     {
         if (isValid)
+        {
             FieldValidity[name] = 1;
+        }
         else
+        {
             FieldValidity[name] = 0;
+        }
+
+        DataIsValid = Context.Validate();
     }
 
     // The form's completion progress is calculated by adding the total number of valid fields together.

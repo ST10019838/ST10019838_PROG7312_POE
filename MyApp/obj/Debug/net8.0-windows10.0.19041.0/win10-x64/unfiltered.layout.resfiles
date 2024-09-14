@@ -1,5 +1,4 @@
 Components\Layout\MainLayout.razor.css
-Components\Layout\NavMenu.razor.css
 OpenSans-Regular.ttf
 appicon.ico
 appiconLargeTile.scale-100.png
@@ -65,20 +64,5 @@ AboutAssets.txt
 tailwind.extension.json
 wwwroot\css\app.css
 wwwroot\favicon.png
-wwwroot\files\2rhw4wzp.png
-wwwroot\files\30soh0s3.png
-wwwroot\files\4db5fulf.png
-wwwroot\files\awnxtipo.png
-wwwroot\files\cl0fsx4j.jpeg
-wwwroot\files\d5l50fto.png
-wwwroot\files\dumcuco0.jpeg
-wwwroot\files\fak2gm41.png
-wwwroot\files\ixg1qgn3.jpeg
-wwwroot\files\ovqn14mg.png
-wwwroot\files\pilz0kws.png
-wwwroot\files\sdp1pite.png
-wwwroot\files\tap4tnam.png
-wwwroot\files\udwhi43q.png
-wwwroot\files\uuq2zxql.png
 wwwroot\index.html
 wwwroot\tailwind.css

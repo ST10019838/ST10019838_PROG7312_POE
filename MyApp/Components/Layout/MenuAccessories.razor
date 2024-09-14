@@ -19,7 +19,6 @@
 
 
 @code {
-
     [Parameter]
     public bool ModalIsVisible { get; set; } = false;
 
@@ -45,7 +44,7 @@
         // Sets the issues state to the issues stored in the repository
         StateContainer.Issues = new();
 
-        ModalIsVisible = false;
+        await CloseModal.InvokeAsync();
     }
 
 

@@ -1,27 +1,66 @@
-﻿<div class="top-row navbar navbar-dark ps-3">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">MyApp</a>
+﻿@using MyApp.Components.UI
+@using MyApp.Components.Forms
+@using MyApp.Models
+@using TailwindMerge
+@inject NavigationManager Nav
+@inject TwMerge Tw
+@implements IDisposable
+@inject StateContainer StateContainer
+
+    <div class="hidden sm:block">
+        <SideMenu ShowModal="@ShowModal" />
     </div>
-</div>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+    <div class="flex flex-col items-center justify-center gap-2 bg-white pt-5 sm:hidden">
+        <DropdownMenu ShowModal="@ShowModal" />
 
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
-</div>
+        <div class="mb-1 h-0.5 w-3/5 rounded-full bg-gray-200" />
+    </div>
+
+
+
+
+<MenuAccessories CloseModal="@CloseModal" ModalIsVisible="@ModalIsVisible" />
+
+@code {
+
+    // The following functions were adapted from stackoverflow.com
+    // Author: Vencovsky
+    // Link: https://stackoverflow.com/questions/66111730/navigationmanager-uri-does-not-update-at-all-unless-page-is-refreshed-how-to-ge
+    private void HandleLocationChanged(object sender, LocationChangedEventArgs e)
+    {
+        // rerender component
+        StateHasChanged();
+    }
+
+    protected override void OnInitialized()
+    {
+        // add to the NavigationManager event
+        Nav.LocationChanged += HandleLocationChanged;
+        StateContainer.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        // remove from the NavigationManager event
+        Nav.LocationChanged -= HandleLocationChanged;
+        StateContainer.OnChange -= StateHasChanged;
+    }
+
+
+    bool ModalIsVisible { get; set; } = false;
+    public void ShowModal()
+    {
+        ModalIsVisible = true;
+    }
+
+    public void CloseModal()
+    {
+        ModalIsVisible = false;
+    }
+}
+
+
+
+
+

@@ -4,9 +4,10 @@
 
 @if (IsVisible)
 {
-    <section class="bg-black/50 absolute left-0 top-0 flex h-screen w-screen items-center justify-center"
+    <section class="bg-black/50 absolute left-0 top-0 grid h-full min-h-screen w-full place-content-center"
              @onmousedown=OnClose>
-        <aside class=@Tw.Merge("z-50 flex flex-col items-center rounded-md border bg-white border-gray-200 gap-4 rounded-lg p-5 max-w-[450px] w-full", Class)
+        <aside class=@Tw.Merge("z-50 flex flex-col items-center rounded-l-lg border bg-white border-gray-200 gap-4 p-5",
+           "overflow-auto w-screen h-full sm:max-h-[700px] sm:w-full sm:min-w-[450px]", Class)
             @onmousedown:stopPropagation>
             <div class="bottom flex w-full items-center justify-between">
                 <div class="text-xl font-medium">
@@ -23,7 +24,7 @@
                 </button>
             </div>
 
-            <div class="h-0.5 w-full rounded-full bg-gray-200" />
+            <div class="min-h-0.5 w-full rounded-full bg-gray-200" />
 
             <div class="w-full">
                 @Children

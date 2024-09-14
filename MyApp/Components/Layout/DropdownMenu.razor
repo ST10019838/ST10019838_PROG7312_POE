@@ -9,7 +9,7 @@
 
 
 
-<button @onclick=ShowMenu class="max-w-max rounded bg-white p-1 px-4 py-1 opacity-75 hover:bg-gray-200">
+<button @onclick=ShowMenu class="max-w-max rounded-md border border-gray-200 bg-white p-1 px-4 py-1 opacity-75 hover:bg-gray-200">
     <svg xmlns="http://www.w3.org/2000/svg"
          viewBox="0 0 24 24" fill="none"
          stroke="currentColor" stroke-width="2"
@@ -154,8 +154,6 @@
 }
 
 
-<MenuAccessories CloseModal="@CloseModal" ModalIsVisible="@ModalIsVisible" />
-
 @code {
     string ActiveRouteClasses = "text-blue-700 bg-blue-50 hover:text-blue-700 hover:bg-blue-50 opacity-75";
     string InactiveRouteClasses = "hover:bg-gray-100 text-gray-500 hover:text-gray-700 ";
@@ -163,15 +161,15 @@
 
 
     bool IsMenuVisible { get; set; } = false;
-    public void ShowMenu()
+    void ShowMenu()
     {
         IsMenuVisible = true;
     }
-
-    public void CloseMenu()
+    void CloseMenu()
     {
         IsMenuVisible = false;
     }
+
 
     // The following functions were adapted from stackoverflow.com
     // Author: Vencovsky
@@ -195,14 +193,7 @@
         Nav.LocationChanged -= HandleLocationChanged;
     }
 
-    bool ModalIsVisible { get; set; } = false;
-    public void ShowModal()
-    {
-        ModalIsVisible = true;
-    }
 
-    public void CloseModal()
-    {
-        ModalIsVisible = false;
-    }
+    [Parameter]
+    public EventCallback ShowModal { get; set; }
 }

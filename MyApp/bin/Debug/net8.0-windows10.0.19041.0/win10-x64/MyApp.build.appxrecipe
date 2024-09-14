@@ -46,51 +46,6 @@
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\favicon.png">
       <PackagePath>wwwroot\favicon.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\2rhw4wzp.png">
-      <PackagePath>wwwroot\files\2rhw4wzp.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\30soh0s3.png">
-      <PackagePath>wwwroot\files\30soh0s3.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\4db5fulf.png">
-      <PackagePath>wwwroot\files\4db5fulf.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\awnxtipo.png">
-      <PackagePath>wwwroot\files\awnxtipo.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\cl0fsx4j.jpeg">
-      <PackagePath>wwwroot\files\cl0fsx4j.jpeg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\d5l50fto.png">
-      <PackagePath>wwwroot\files\d5l50fto.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\dumcuco0.jpeg">
-      <PackagePath>wwwroot\files\dumcuco0.jpeg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\fak2gm41.png">
-      <PackagePath>wwwroot\files\fak2gm41.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\ixg1qgn3.jpeg">
-      <PackagePath>wwwroot\files\ixg1qgn3.jpeg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\ovqn14mg.png">
-      <PackagePath>wwwroot\files\ovqn14mg.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\pilz0kws.png">
-      <PackagePath>wwwroot\files\pilz0kws.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\sdp1pite.png">
-      <PackagePath>wwwroot\files\sdp1pite.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\tap4tnam.png">
-      <PackagePath>wwwroot\files\tap4tnam.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\udwhi43q.png">
-      <PackagePath>wwwroot\files\udwhi43q.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\files\uuq2zxql.png">
-      <PackagePath>wwwroot\files\uuq2zxql.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
     </AppxPackagedFile>
@@ -567,9 +522,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\Components\Layout\MainLayout.razor.css">
       <PackagePath>Components\Layout\MainLayout.razor.css</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\Components\Layout\NavMenu.razor.css">
-      <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
