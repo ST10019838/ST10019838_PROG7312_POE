@@ -1,6 +1,9 @@
 ﻿@using MyApp.Models
+@using MyApp.Components.UI
+@using TailwindMerge
+@inject TwMerge Tw
 
-<article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+<article class="max-w-[300px] overflow-hidden rounded-lg shadow transition hover:shadow-lg">
     <!--
     <img alt=""
          src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
@@ -8,8 +11,9 @@
     -->
 
 
-    <div class="bg-white p-4 sm:p-6">
-        <time datetime="2022-10-10" class="block text-xs text-gray-500"> @Issue.Category </time>
+    <div class="flex flex-col gap-3 bg-white p-4 sm:p-6">
+
+        <Badge Text="@Issue.Category" Color="@BadgeColor" />
 
         <a href="#">
             <h3 class="mt-0.5 text-lg text-gray-900">@Issue.Location</h3>
@@ -22,46 +26,62 @@
             mollitia itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius atque
             dignissimos. Molestias explicabo corporis voluptatem?
             -->
-            
             @Issue.Description
         </p>
-    </div>
 
-    <div>
-        File Names:
+        
 
-        @foreach (var item in Issue.MediaAttachments)
+        @if (!AttachmentViewIsDisabled)
         {
-            @if (item is null) continue;
+            <div class="mx-auto my-2 h-0.5 w-3/4 rounded bg-gray-200" />
 
-            @item.Name ;;; @item.Size
-
+            <button class="w-full cursor-pointer text-sm text-blue-500 hover:underline" @onclick=ShowModal>
+                Attachment(s)
+            </button>
         }
     </div>
 
-    <div @onclick=ShowModal>Show Image(s)</div>
+
 </article>
 
-<Modal IsVisible="@ModalIsVisible" Title="View Attachments">
+<Modal IsVisible="@ModalIsVisible" OnClose="@CloseModal" Title="Attachment(s) Information">
     <Children>
+
+        <!--
         @foreach (var path in filePaths)
         {
-            @if (path is null) continue;
+        @if (path is null) continue;
 
-            <!-- <img src="@path" class="h-auto w-[300px]" /> -->
+                <img src="@path" class="h-auto w-[300px]" />
+                <iframe src="@path" class="h-auto w-[300px]" />
 
-
-            <iframe src="@path" class="h-auto w-[300px]" />
-             
 
         }
+            <iframe src="@imagePath" class="h-auto w-[300px]" />
+        -->
 
-        <iframe src="@imagePath" class="h-auto w-[300px]" />
+        <div class="flex flex-col items-center justify-center gap-3">
+            @foreach (var item in Issue.MediaAttachments)
+            {
+                @if (item is null) continue;
+
+                <div class="w-full">
+                    <div>File Name: @item.Name</div>
+                    <div>File Size: @item.Size</div>
+                    <div>Content Type: @item.ContentType</div>
+                    <div>Last Modified: @item.LastModified</div>
+
+
+                </div>
+                <div class="h-0.5 w-3/4 rounded bg-gray-200" />
+
+            }
+        </div>
+
+
 
     </Children>
 </Modal>
-
-
 
 @code {
     [Parameter]
@@ -71,31 +91,74 @@
 
     string[] filePaths { get; set; }
 
-    // protected override void OnInitialized()
-    // {
-    //     files = Issue.MediaAttachments;
-    // }
+    string BadgeColor { get; set; }
+
+    bool AttachmentViewIsDisabled { get; set; } = false;
+
+    protected override void OnInitialized()
+    {
+        // Attempted to store badge colors in dictionary (found under IssueCategories)
+        // however it wasn't working for some reason.
+        switch (Issue.Category)
+        {
+            case "Infrastructure And Utilities":
+                BadgeColor = "text-violet-700 border-violet-500";
+                break;
+            case "Public Safety":
+                BadgeColor = "text-yellow-700 border-yellow-500";
+                break;
+            case "Land Use And Zoning":
+                BadgeColor = "text-lime-700 border-lime-500";
+                break;
+            case "Health And Social":
+                BadgeColor = "text-green-700 border-green-500";
+                break;
+            case "Economic Development":
+                BadgeColor = "text-cyan-700 border-cyan-500";
+                break;
+            case "Education And Culture":
+                BadgeColor = "text-orange-700 border-orange-500";
+                break;
+            case "Finance And Administration":
+                BadgeColor = "text-emerald-700 border-emerald-500";
+                break;
+
+            default:
+                break;
+        }
+
+        var attachmentCount = 0;
+
+        foreach (var attachment in Issue.MediaAttachments)
+        {
+            if (attachment is null) continue;
+
+            attachmentCount++;
+        }
+
+        // if there are no attachments, disable the attachment view button
+        if (attachmentCount == 0) AttachmentViewIsDisabled = true;
+
+        // files = Issue.MediaAttachments;
+        StateHasChanged();
+    }
 
     string? imagePath { get; set; } = null;
 
     public void ShowModal()
     {
-        filePaths = new string[Issue.MediaAttachments.Length];
+        // filePaths = new string[Issue.MediaAttachments.Length];
 
-        for (int i = 0; i < Issue.MediaAttachments.Length; i++)
-        {
-            if (Issue.MediaAttachments[i] is null) continue;
+        // for (int i = 0; i < Issue.MediaAttachments.Length; i++)
+        // {
+        //     if (Issue.MediaAttachments[i] is null) continue;
 
-            <!-- <iframe src="@("files/" + item.Name)" class="h-auto w-[300px]" />-->
+        //     filePaths[i] = "files\\" + Issue.MediaAttachments[i].Name;
+        // }
 
-            // <img src="@("files/" + item.Name)" class="h-auto w-[300px]" />
+        // string rootPath = Repository.GetRootPath();
 
-            filePaths[i] = "files\\" + Issue.MediaAttachments[i].Name;
-        }
-
-        string rootPath = Repository.GetRootPath();
-
-        imagePath = Path.Combine(rootPath, "wwwroot", "files", Issue.MediaAttachments[0].Name);
+        // imagePath = Path.Combine(rootPath, "wwwroot", "files", Issue.MediaAttachments[0].Name);
 
         ModalIsVisible = true;
 
@@ -103,5 +166,10 @@
         // imagePath = $"files/{Issue.MediaAttachments[0].Name}";
 
         StateHasChanged();
+    }
+
+    void CloseModal()
+    {
+        ModalIsVisible = false;
     }
 }

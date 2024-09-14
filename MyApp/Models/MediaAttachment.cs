@@ -22,6 +22,7 @@ namespace MyApp.Models
             public static readonly int MAX_FILESIZE = 5000 * 1024; // 5 MB
             public static readonly int MAX_ALLOWEDFILES = 3;
         }
+
     }
 
 

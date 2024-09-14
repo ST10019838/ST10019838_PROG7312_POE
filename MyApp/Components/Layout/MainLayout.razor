@@ -5,21 +5,36 @@
         <div class="sidebar">
             <NavMenu />
         </div>
+
+
+
+
     -->
 
-    <div class="">
+    <div class="hidden sm:block">
         <SideMenu />
     </div>
 
-    <main>
-        <!-- 
+    <div class="sticky top-0 flex flex-col items-center justify-center gap-2 bg-white pt-5 sm:hidden">
+        <DropdownMenu />
+
+        <div class="mb-1 h-0.5 w-3/5 rounded-full bg-gray-200"/>
+    </div>
+
+    <main class="p-5">
+
+
+        <!--
         <div class="top-row px-4">
             <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
         </div>
-        -->
 
-        <article class="content px-4">
-            @Body
+        <article class="content h-full px-4">
+
         </article>
+        -->
+        @Body
+
+
     </main>
 </div>

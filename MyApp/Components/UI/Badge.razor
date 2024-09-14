@@ -1,0 +1,15 @@
+﻿@using MyApp.Models
+@using TailwindMerge;
+@inject TwMerge Tw;
+
+<span class="@Tw.Merge("whitespace-nowrap rounded-full border px-2.5 py-0.5 text-sm  max-w-max", Color)">
+    @Text
+</span>
+
+@code {
+    [Parameter]
+    public string Text { get; set; }
+
+    [Parameter]
+    public string Color { get; set; }
+}

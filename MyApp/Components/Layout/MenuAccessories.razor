@@ -1,0 +1,64 @@
+﻿@using MyApp.Components.UI
+@using MyApp.Components.Forms
+@using MyApp.Models
+@using TailwindMerge
+@inject NavigationManager Nav
+@inject StateContainer StateContainer
+
+<div>
+    <Modal IsVisible="@ModalIsVisible" OnClose="@CloseModal" Title="Report An Issue">
+        <Children>
+            <IssueForm OnSubmit="@((issue) => SubmitForm(issue))"
+                       OnComplete="@(() => ShowToast())" />
+        </Children>
+    </Modal>
+
+
+    <Toast Text="@ToastMessage" IsVisible="@ToastIsVisible" Mode="@ToastMode" />
+</div>
+
+
+@code {
+
+    [Parameter]
+    public bool ModalIsVisible { get; set; } = false;
+
+    [Parameter]
+    public EventCallback CloseModal { get; set; }
+
+
+    private bool ToastIsVisible = false;
+    private string ToastMessage = "";
+    private Toast.ToastMode ToastMode = Toast.ToastMode.Success;
+
+    private Response ResponseForToast { get; set; } = new()
+        {
+            Success = true,
+            Message = "Saved Successfully!"
+        };
+
+
+    private async Task SubmitForm(Issue newIssue)
+    {
+        ResponseForToast = await Repository.AddIssue(newIssue);
+
+        // Sets the issues state to the issues stored in the repository
+        StateContainer.Issues = new();
+
+        ModalIsVisible = false;
+    }
+
+
+    private async Task ShowToast()
+    {
+        if (ResponseForToast.Success) ToastMode = Toast.ToastMode.Success;
+        else ToastMode = Toast.ToastMode.Failure;
+
+        ToastMessage = ResponseForToast.Message;
+        ToastIsVisible = true;
+
+        await Task.Delay(3000);
+
+        ToastIsVisible = false;
+    }
+}

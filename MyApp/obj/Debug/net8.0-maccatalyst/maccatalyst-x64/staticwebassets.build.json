@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gvslswak+3YJ0NIrOoPNnQ1hV/dMS+YdVGh5H3G3j7U=",
+  "Hash": "uOxZivoLqVqW1Enyv2n01aUHcbnX9F5lK8BG1De1hsM=",
   "Source": "MyApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -93,12 +93,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\files\\5d1kvrg3.jpeg",
+      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\files\\2rhw4wzp.png",
       "SourceId": "MyApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "files/5d1kvrg3.jpeg",
+      "RelativePath": "files/2rhw4wzp.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -109,15 +109,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\files\\5d1kvrg3.jpeg"
+      "OriginalItemSpec": "wwwroot\\files\\2rhw4wzp.png"
     },
     {
-      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\files\\aiknvmew.jpeg",
+      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\files\\30soh0s3.png",
       "SourceId": "MyApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "files/aiknvmew.jpeg",
+      "RelativePath": "files/30soh0s3.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -128,15 +128,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\files\\aiknvmew.jpeg"
+      "OriginalItemSpec": "wwwroot\\files\\30soh0s3.png"
     },
     {
-      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\files\\qhjljz1f.jpeg",
+      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\files\\dumcuco0.jpeg",
       "SourceId": "MyApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "files/qhjljz1f.jpeg",
+      "RelativePath": "files/dumcuco0.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -147,15 +147,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\files\\qhjljz1f.jpeg"
+      "OriginalItemSpec": "wwwroot\\files\\dumcuco0.jpeg"
     },
     {
-      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\files\\z0ooqglb.jpeg",
+      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\files\\ixg1qgn3.jpeg",
       "SourceId": "MyApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "files/z0ooqglb.jpeg",
+      "RelativePath": "files/ixg1qgn3.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -166,7 +166,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\files\\z0ooqglb.jpeg"
+      "OriginalItemSpec": "wwwroot\\files\\ixg1qgn3.jpeg"
     },
     {
       "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\index.html",

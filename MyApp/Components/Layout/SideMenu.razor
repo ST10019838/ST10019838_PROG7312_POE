@@ -7,8 +7,8 @@
 @implements IDisposable
 @inject StateContainer StateContainer
 
-<div class="flex h-screen w-16 flex-col justify-between border-e bg-white">
-    <div>
+<div class="flex h-full min-h-screen w-16 flex-col justify-between border-e bg-white">
+    <div class="sticky top-0">
         <div class="inline-flex size-16 items-center justify-center">
             <span class="grid size-10 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600">
                 L
@@ -28,7 +28,7 @@
                              stroke="currentColor"
                              stroke-width="2" stroke-linecap="round"
                              stroke-linejoin="round"
-                             class="lucide lucide-message-square-warning @(Nav.BaseUri.EndsWith("") ? "opacity-75" : "opcacity-50")">
+                             class="lucide lucide-message-square-warning opcacity-50">
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                             <path d="M12 7v2" />
                             <path d="M12 13h.01" />
@@ -43,7 +43,7 @@
                 <ul class="space-y-3 border-t border-gray-200 pt-4">
                     <li>
                         <a href=""
-                           class="@Tw.Merge(Classes, (Nav.Uri.EndsWith("") ? ActiveRouteClasses: InactiveRouteClasses))">
+                           class="@Tw.Merge(Classes, Nav.Uri.EndsWith("") ? ActiveRouteClasses: InactiveRouteClasses)">
 
                             <svg xmlns="http://www.w3.org/2000/svg"
                                  width="24" height="24"
@@ -144,38 +144,15 @@
 </div>
 
 
-
-<Modal IsVisible="@ModalIsVisible" OnClose="@CloseModal" Title="Report An Issue">
-    <Children>
-        <IssueForm OnSubmit="@((issue) => SubmitForm(issue))"
-                   OnComplete="@(() => ShowToast())" />
-    </Children>
-</Modal>
+<MenuAccessories CloseModal="@CloseModal" ModalIsVisible="@ModalIsVisible" />
 
 
-<Toast Text="@ToastMessage" IsVisible="@ToastIsVisible" Mode="@ToastMode" />
 
 @code {
     string ActiveRouteClasses = "text-blue-700 bg-blue-50 hover:text-blue-700 hover:bg-blue-50";
     string InactiveRouteClasses = "hover:bg-gray-50 text-gray-500 hover:text-gray-700";
     string Classes = $"group relative flex justify-center rounded px-2 py-1.5";
 
-
-    bool ModalIsVisible { get; set; } = false;
-    public void ShowModal()
-    {
-        ModalIsVisible = true;
-    }
-
-    public void CloseModal()
-    {
-        ModalIsVisible = false;
-    }
-
-    void NavigateTo(string path)
-    {
-        Nav.NavigateTo(path);
-    }
 
     // The following functions were adapted from stackoverflow.com
     // Author: Vencovsky
@@ -202,38 +179,16 @@
     }
 
 
-    private bool ToastIsVisible = false;
-    private string ToastMessage = "";
-    private Toast.ToastMode ToastMode = Toast.ToastMode.Success;
-
-    private Response ResponseForToast { get; set; } = new()
-        {
-            Success = true,
-            Message = "Saved Successfully!"
-        };
-
-
-    private async Task SubmitForm(Issue newIssue)
+    bool ModalIsVisible { get; set; } = false;
+    public void ShowModal()
     {
-        var response = await Repository.AddIssue(newIssue);
+        ModalIsVisible = true;
+    }
 
-        // Sets the issues state to the issues stored in the repository 
-        StateContainer.Issues = new();
-
+    public void CloseModal()
+    {
         ModalIsVisible = false;
     }
 
 
-    private async Task ShowToast()
-    {
-        if (ResponseForToast.Success) ToastMode = Toast.ToastMode.Success;
-        else ToastMode = Toast.ToastMode.Failure;
-
-        ToastMessage = ResponseForToast.Message;
-        ToastIsVisible = true;
-
-        await Task.Delay(3000);
-
-        ToastIsVisible = false;
-    }
 }

@@ -12,13 +12,39 @@
     <iframe src="files/" class="h-auto w-[300px]" />
 -->
 
-@foreach (var issue in StateContainer.Issues)
-{
-    <IssueReportCard Issue="@issue" />
-}
+<section class="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8 xl:grid-cols-4">
+
+    @foreach (var issue in StateContainer.Issues)
+    {
+        <IssueReportCard Issue="@issue" />
+    }
+
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+    <div class="h-56 rounded-lg bg-gray-200"></div>
+
+    <!-- <button @onclick=RefreshIssues>Refresh</button>-->
+
+</section>
 
 
-<button @onclick=RefreshIssues >Refresh</button>
+
 
 @code {
     // private List<Issue> Issues { get; set; }
@@ -39,7 +65,7 @@
 
     private void RefreshIssues()
     {
-        // Issues = Repository.GetIssues();
+        StateContainer.Issues = Repository.GetIssues();
         StateHasChanged();
     }
 

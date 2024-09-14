@@ -52,6 +52,18 @@ namespace MyApp.Models
             Education_And_Culture,
             Finance_And_Administration
         }
+
+        // Attempted to store badge colors in dictionary however it wasn't working for some reason.
+        //public static Dictionary<string, string> ClassColors = new()
+        //{
+        //    { "Infrastructure And Utilities", " text-violet-700 border-violet-500 " },
+        //    { "Public Safety", "text-yellow-700 border-yellow-500" },
+        //    { "Land Use And Zoning", "text-lime-700 border-lime-500" },
+        //    { "Health And Social", "text-green-700 border-green-500" },
+        //    { "Economic Development", "text-cyan-700 border-cyan-500" },
+        //    { "Education And Culture", "text-orange-700 border-orange-500" },
+        //    { "Finance And Administration", "text-emerald-700 border-emerald-500" }
+        //};
     }
 
 
