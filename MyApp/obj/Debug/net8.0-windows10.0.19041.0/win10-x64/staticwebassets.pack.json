@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
+      "Id": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\files\\Note.txt",
+      "PackagePath": "staticwebassets\\files\\Note.txt"
+    },
+    {
       "Id": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },

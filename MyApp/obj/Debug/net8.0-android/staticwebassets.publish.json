@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Te9gby5cPQpcQPHmuxDH8hh4uWLje3Srt8wFKXw9mLg=",
+  "Hash": "KWA/2ReaYmFnI12ii9gHF3Ko5PrxFVaitBGRDswkC9Y=",
   "Source": "MyApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\files\\Note.txt",
+      "SourceId": "MyApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "files/Note.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\Note.txt"
     },
     {
       "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\index.html",

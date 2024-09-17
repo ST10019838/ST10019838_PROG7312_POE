@@ -69,10 +69,6 @@
         <PackageReference Include="TailwindMerge.NET" Version="0.3.0" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="wwwroot\files\" />
-    </ItemGroup>
-
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="npm run watch-tailwind" />
