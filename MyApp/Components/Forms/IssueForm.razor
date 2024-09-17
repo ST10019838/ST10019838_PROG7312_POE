@@ -16,7 +16,7 @@
               Validation="@(() => Validate("Description", Issue.Description))" />
 
 
-    <Select Id="Places" Values="IssueCategories.Array" @bind-Value="@Issue.Category"
+    <Select Id="Category" Values="IssueCategories.Array" @bind-Value="@Issue.Category"
             FormContext="Context" IsRequired="true"
             Validation="@(() => Validate("Category", Issue.Category))" />
 
