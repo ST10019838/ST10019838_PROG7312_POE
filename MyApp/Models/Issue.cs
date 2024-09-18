@@ -6,7 +6,7 @@ namespace MyApp.Models
     public class Issue
     {
         [Required(ErrorMessage = "A Location Must Be Provided")]
-        [StringLength(100, MinimumLength = 1, ErrorMessage = "Length of Location needs to be between 1 and 255")]
+        [StringLength(255, MinimumLength = 1, ErrorMessage = "Length of Location needs to be between 1 and 255")]
         public string Location { get; set; }
 
 
@@ -15,7 +15,7 @@ namespace MyApp.Models
 
 
         [Required(ErrorMessage = "A Description Must Be Provided")]
-        [StringLength(100, MinimumLength = 1, ErrorMessage = "Length of Description needs to be between 1 and 255")]
+        [StringLength(255, MinimumLength = 1, ErrorMessage = "Length of Description needs to be between 1 and 255")]
         public string Description { get; set; }
 
 

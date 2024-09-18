@@ -64,5 +64,6 @@ AboutAssets.txt
 tailwind.extension.json
 wwwroot\css\app.css
 wwwroot\favicon.png
+wwwroot\files\Note.txt
 wwwroot\index.html
 wwwroot\tailwind.css
