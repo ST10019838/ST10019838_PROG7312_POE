@@ -12,23 +12,26 @@
     <iframe src="files/" class="h-auto w-[300px]" />
 -->
 
-
-@if(StateContainer.Issues.Any()){
-    <section class="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8 xl:grid-cols-4">
-
-    @foreach (var issue in StateContainer.Issues)
+<div class="grow overflow-auto p-5 sm:h-full sm:max-h-screen">
+    @if (StateContainer.Issues.Any())
     {
-        <IssueReportCard Issue="@issue" Class="h-full max-h-[250px] w-full overflow-auto" />
+        <section class="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8 xl:grid-cols-4">
+
+            @foreach (var issue in StateContainer.Issues)
+            {
+                <IssueReportCard Issue="@issue" Class="h-full max-h-[250px] w-full overflow-auto" />
+            }
+
+            <!-- <button @onclick=RefreshIssues>Refresh</button>-->
+
+        </section>
     }
+    else
+    {
+        <div class="grid w-full place-content-center">You have not reported any issues.</div>
+    }
+</div>
 
-    <!-- <button @onclick=RefreshIssues>Refresh</button>-->
-
-    </section>
-}
-else
-{
-    <div class="grid w-full place-content-center">You have not reported any issues.</div>
-}
 
 
 
@@ -44,8 +47,6 @@ else
         // Issues = Repository.GetIssues();
 
         StateContainer.OnChange += StateHasChanged;
-
-        List<string> idk = new();
        
     }
 

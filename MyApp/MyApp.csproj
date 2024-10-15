@@ -62,15 +62,19 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.82" />
-        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.82" />
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="8.0.82" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.91" />
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.91" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="8.0.91" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
+        <PackageReference Include="OptimizedPriorityQueue" Version="5.1.0" />
+        <PackageReference Include="System.Text.Json" Version="8.0.5" />
         <PackageReference Include="TailwindMerge.NET" Version="0.3.0" />
     </ItemGroup>
 
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  <!-- The following code was adapted from  -->
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="npm install" />
     <Exec Command="npm run watch-tailwind" />
   </Target>
 

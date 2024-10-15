@@ -61,7 +61,7 @@
 
             <li>
                 <a href=""
-                   class="@Tw.Merge(Classes, Nav.Uri.EndsWith("") ? ActiveRouteClasses: InactiveRouteClasses)">
+                   class="@Tw.Merge(Classes, Nav.Uri.EndsWith("/") ? ActiveRouteClasses: InactiveRouteClasses)">
                     <svg xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -79,7 +79,8 @@
             </li>
 
             <li>
-                <a class="@Tw.Merge(Classes, Nav.Uri.EndsWith("local-events-and-announcements") ? ActiveRouteClasses: InactiveRouteClasses,"opacity-50")">
+                <a href="local-events-and-announcements"
+                    class="@Tw.Merge(Classes, Nav.Uri.EndsWith("local-events-and-announcements") ? ActiveRouteClasses: InactiveRouteClasses)">
                     <svg xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 24 24"
                          fill="none" stroke="currentColor"
@@ -93,7 +94,7 @@
                         <path d="M22 8c0-2.3-.8-4.3-2-6" />
                     </svg>
 
-                    <span class="text-sm font-medium">  Local Events and Announcements (Disabled) </span>
+                    <span class="text-sm font-medium">  Local Events and Announcements </span>
                 </a>
             </li>
 

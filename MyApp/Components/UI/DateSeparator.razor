@@ -1,0 +1,21 @@
+﻿@using MyApp.Utils
+@using TailwindMerge
+@inject TwMerge Tw
+
+<div class="flex w-full items-center gap-2">
+    <div class=@Tw.Merge(lineClass)></div>
+    <!--
+        The following Date format was taken from code-maze.com
+        Author: Code Maze
+        Link: https://code-maze.com/remove-time-from-datetime-csharp/
+    -->
+    <div class="min-w-max text-gray-500">Posted on @(DateFormatter.FormatDate(Date))</div>
+    <div class=@Tw.Merge(lineClass)></div>
+</div>
+
+@code {
+    string lineClass = "h-0.5 w-full rounded-full bg-gray-300";
+
+    [Parameter]
+    public DateOnly Date { get; set; }
+}

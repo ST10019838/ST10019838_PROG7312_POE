@@ -61,7 +61,6 @@ wwwroot\MyApp.bundle.scp.css
 package.json
 package-lock.json
 AboutAssets.txt
-tailwind.extension.json
 wwwroot\css\app.css
 wwwroot\favicon.png
 wwwroot\files\Note.txt

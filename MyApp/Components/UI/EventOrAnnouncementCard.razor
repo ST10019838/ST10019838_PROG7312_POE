@@ -1,0 +1,258 @@
+﻿@using MyApp.Models
+@using TailwindMerge
+@using MyApp.Utils
+@inject TwMerge Tw
+
+
+<!--
+    The following design was inspired by v0
+    Link: https://v0.dev/
+-->
+
+<article class=@Tw.Merge("rounded-xl shadow transition hover:shadow-md p-7 flex flex-col gap-5 border max-h-min lg:max-w-[400px]", Class)>
+    <!--Tile Section-->
+    <div class="flex flex-col gap-1">
+        <h3 class="mt-0.5 text-wrap break-words text-xl text-gray-900 font-bold">@EventOrAnnouncement.Title</h3>
+
+        <div class="text-sm/relaxed w-full text-wrap break-words text-gray-500 text-muted-foreground">
+            Created at @(String.Format($"{EventOrAnnouncement.CreatedAt:dd MMM yyyy}")) by @EventOrAnnouncement.CreatedBy
+        </div>
+    </div>
+
+
+    <!--Description-->
+    <p class="text-sm mt-2 w-full text-wrap break-words text-muted-foreground text-gray-500">
+        @EventOrAnnouncement.Description
+    </p>
+
+
+    <!--Event Details-->
+    @if (EventOrAnnouncement.Type == EventOrAnnouncementType.Event)
+    {
+        <div class="flex flex-col gap-2 mt-3">
+            <!--Organiser-->
+            <div class="text-sm flex w-full gap-2 items-center">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-users size-4">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+                <p class="font-semibold">Organiser:</p>
+                <p class="text-wrap break-words">@(EventOrAnnouncement?.Organiser)</p>
+            </div>
+
+            <!--Location-->
+            <div class="text-sm flex w-full gap-2 items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-map-pin size-4">
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span class="font-semibold">Location:</span>
+                <span class="text-wrap break-words">@(EventOrAnnouncement?.Location)</span>
+            </div>
+
+            <!--Category-->
+            <div class="text-sm flex w-full gap-2 items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+                    stroke-linejoin="round" class="lucide lucide-tag size-4">
+                    <path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" />
+                    <circle cx="7.5" cy="7.5" r=".5" fill="currentColor" />
+                </svg>
+                <p class="font-semibold">Category:</p>
+                <p class="text-wrap break-words">@(EventOrAnnouncement?.Category.ToString())</p>
+            </div>
+
+            <!--Date-->
+            <div class="text-sm flex w-full gap-2 items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                    stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="lucide lucide-calendar size-4">
+                    <path d="M8 2v4" />
+                    <path d="M16 2v4" />
+                    <rect width="18" height="18" x="3" y="4" rx="2" />
+                    <path d="M3 10h18" />
+                </svg>
+                <p class="font-semibold">Date:</p>
+                <p class="text-wrap break-words">@(EventOrAnnouncement?.Date)</p>
+            </div>
+
+            <!--Time-->
+            <div class="text-sm flex w-full gap-2 items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" 
+                    stroke="currentColor" stroke-width="2" 
+                    stroke-linecap="round" stroke-linejoin="round" 
+                    class="lucide lucide-clock size-4">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <p class="font-semibold">Time:</p>
+                <p class="text-wrap break-words">@(EventOrAnnouncement?.StartTime?.ToString()) - @(EventOrAnnouncement?.EndTime?.ToString())</p>
+            </div>
+        </div>
+    }
+
+    <div class="h-1 w-3/4 rounded-full bg-gray-300 mx-auto" />
+
+    <div class="flex gap-3 w-full items-center justify-center">
+
+        @if (EventOrAnnouncement.Type == EventOrAnnouncementType.Announcement)
+        {
+            <Badge Text="@EventOrAnnouncement.Type.ToString()" Color="@BadgeColor" />
+        }
+        else
+        {
+            <Badge Text="@($"{@EventOrAnnouncement.Category.ToString()} {@EventOrAnnouncement.Type.ToString()}")" Color="@BadgeColor" />
+        }
+    </div>
+
+    
+</article>
+
+
+
+
+<Modal IsVisible="@ModalIsVisible" OnClose="@CloseModal" Title=@($"{EventOrAnnouncement.Type.ToString()} Information")>
+    <Children>
+        <div class="flex flex-col items-center justify-center gap-3">
+
+        </div>
+    </Children>
+</Modal>
+
+@code {
+    [Parameter]
+    [EditorRequired]
+    public EventOrAnnouncement EventOrAnnouncement { get; set; }
+
+    [Parameter]
+    public string Class { get; set; }
+
+    string BadgeColor { get; set; }
+
+    protected override void OnInitialized()
+    {
+        // Attempted to store badge colors in dictionary (found under IssueCategories)
+        // however it wasn't working for some reason.
+        switch (EventOrAnnouncement.Type)
+        {
+            case EventOrAnnouncementType.Event:
+                BadgeColor = "text-violet-700 border-violet-500";
+                break;
+            case EventOrAnnouncementType.Announcement:
+                BadgeColor = "text-orange-700 border-orange-500";
+                break;
+            default:
+                break;
+        }
+
+        StateHasChanged();
+    }
+
+
+    public bool ModalIsVisible { get; set; } = false;
+
+    public void ShowModal()
+    {
+        ModalIsVisible = true;
+
+        StateHasChanged();
+    }
+
+    void CloseModal()
+    {
+        ModalIsVisible = false;
+    }
+
+
+    // <article class=@Tw.Merge("rounded-xl shadow transition hover:shadow-md p-3 flex flex-col gap-3 justify-center items-center", Class)>
+    //     <Badge Text="@EventOrAnnouncement.Type.ToString()" Color="@BadgeColor" />
+
+    //     <div class="h-1 w-3/4 rounded-full bg-gray-300" />
+
+    //     <div class="flex h-full max-h-[250px] w-full max-w-full flex-col gap-3 overflow-auto px-4 sm:px-6">
+    //         <!--Tile Section-->
+    //         <div class="flex flex-col gap-1">
+    //             <h3 class="mt-0.5 text-wrap break-words text-lg text-gray-900">@EventOrAnnouncement.Title</h3>
+
+    //             <div class="flex flex-col">
+    //                 <p class="text-sm/relaxed w-full text-wrap break-words text-gray-500">Created At: @(String.Format($"{EventOrAnnouncement.CreatedAt:dd MMM yyyy}")) </p>
+    //                 <p class="text-sm/relaxed w-full text-wrap break-words text-gray-500">Created By: @EventOrAnnouncement.CreatedBy</p>
+    //             </div>
+    //         </div>
+
+
+    //         <!--Description-->
+    //         <p class="text-sm/relaxed mt-2 w-full text-wrap break-words">
+    //             <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus
+    //             pariatur animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis quidem,
+    //             mollitia itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius atque
+    //             dignissimos. Molestias explicabo corporis voluptatem? -->
+    //             @EventOrAnnouncement.Description
+    //         </p>
+
+
+    //         <!--Event Details-->
+    //         @if (@EventOrAnnouncement.Type == EventOrAnnouncementType.Event)
+    //         {
+    //         <div class="flex flex-col gap-5 mt-5">
+    //             <!--Organiser-->
+    //             <div class="text-sm/relaxed flex w-full flex-col">
+    //                 <p class="text-gray-400">Organiser:</p>
+    //                 <p class="text-wrap break-words">@(EventOrAnnouncement?.Organiser)</p>
+    //             </div>
+
+    //             <!--Location-->
+    //             <div class="text-sm/relaxed flex w-full flex-col">
+    //                 <p class="text-gray-400">Location:</p>
+    //                 <p class="text-wrap break-words">@(EventOrAnnouncement?.Location)</p>
+    //             </div>
+
+    //             <!--Category-->
+    //             <div class="text-sm/relaxed flex w-full justify-between items-center">
+    //                 <p class="text-gray-400">Category:</p>
+    //                 <p class="text-wrap break-words">@(EventOrAnnouncement?.Category.ToString())</p>
+    //             </div>
+
+    //             <!--Dates and Times-->
+    //             <div class="flex flex-col gap-0.5">
+    //                 <div class="text-sm/relaxed flex w-full items-center justify-between">
+    //                     <p class="text-gray-400">Date:</p>
+    //                     <p>@(DateFormatter.FormatDate(EventOrAnnouncement?.Date))</p>
+    //                 </div>
+
+    //                 <div class="text-sm/relaxed flex w-full items-center justify-between">
+    //                     <p class="text-gray-400">Start Time:</p>
+    //                     <p>@(EventOrAnnouncement?.StartTime?.ToString())</p>
+    //                 </div>
+
+    //                 <div class="text-sm/relaxed flex w-full items-center justify-between">
+    //                     <p class="text-gray-400">End Time:</p>
+    //                     <p>@(EventOrAnnouncement?.EndTime?.ToString())</p>
+    //                 </div>
+    //             </div>
+    //         </div>
+    // }
+    //     </div>
+
+    //     <div class="h-1 w-3/4 rounded-full bg-gray-300" />
+
+    //     <Badge Text="@EventOrAnnouncement.Category.ToString()" Color="@BadgeColor" />
+
+    //     <button class="w-full cursor-pointer text-sm text-blue-500 hover:underline" @onclick=ShowModal>
+    //         View @EventOrAnnouncement.Type.ToString()
+    //     </button>
+    // </article>
+
+}
