@@ -159,9 +159,8 @@ namespace MyApp.Models
         }
 
 
-        // change visibility
         // The recommended events and announcements will be based on the users most searched categories
-        public SimplePriorityQueue<EventCategory> mostSearchedCategories = new SimplePriorityQueue<EventCategory>();
+        SimplePriorityQueue<EventCategory> mostSearchedCategories = new SimplePriorityQueue<EventCategory>();
 
 
         public void CaptureSearchForRecommendations(EventCategory? categorySelected = null)
