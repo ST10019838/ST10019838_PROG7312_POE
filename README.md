@@ -2,10 +2,11 @@
 ## WELCOME!
 Welcome to my repository! This repo contains all of my solutions to the PROG7312 POE.
 
-Solution Progress: 33%/100% Completed
+Solution Progress: 66%/100% Completed
 
 * Added:
-  *  Part 1 (New)
+  *  Part 1
+  *  Part 2 (New)
 
     
 To obtain any code relating to a specific part of the solution, navigate to the commit history then find the commit with the tag of 
@@ -44,7 +45,7 @@ platform for citizens to access and request variaous municipal services.
 
 In a nutshell, this application will enable citizens to:
 - Request issues and request services
-- Access information about local events and announcements _(**In Progress...**)_
+- Access information about local events and announcements (**NEWLY ADDED!**)
 - Receive updates on the status of their service requests _(**In Progress...**)_
 
 
@@ -57,6 +58,29 @@ The following tutorials can found be under the Tutorials folder:
 
 **_Part 1:_**
   * ST10019838_PROG7312_Part1_Tutorial
+
+**_Part 2:_**
+  * ST10019838_PROG7312_Part2_Tutorial
+
+### **NB**:
+
+
+**Before** running the application:
+1. Navigate to the Package Manager Console
+2. Run one of the commands (They do the same thing, just the first one is shorter):
+
+```
+ npm run watch-tailwind
+```
+
+_or_
+
+```
+ npx tailwindcss -i ./Styles/tailwind.css -o ./wwwroot/tailwind.css --watch 
+```
+
+
+ These steps are **VERY IMPORTANT** as they will ensure that all styles are properly added to the application.
 
 
 </br>
