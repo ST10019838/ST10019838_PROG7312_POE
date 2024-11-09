@@ -89,7 +89,8 @@
                     </li>
 
                     <li>
-                        <a class="@Tw.Merge(Classes, (Nav.Uri.EndsWith("service-request-status") ? ActiveRouteClasses : "opacity-50"))">
+                        <a href="service-requests"
+                           class="@Tw.Merge(Classes, (Nav.Uri.EndsWith("service-requests") ? ActiveRouteClasses : InactiveRouteClasses))">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                  width="24"
                                  height="24"
@@ -99,7 +100,7 @@
                                  stroke-width="2"
                                  stroke-linecap="round"
                                  stroke-linejoin="round"
-                                 class="lucide lucide-hand-platter @(Nav.BaseUri.EndsWith("service-request-status") ? "opacity-75" : "opacity-50")">
+                                 class="lucide lucide-hand-platter @(Nav.BaseUri.EndsWith("service-requests") ? "opacity-75" : "opacity-50")">
                                 <path d="M12 3V2" />
                                 <path d="M5 10a7.1 7.1 0 0 1 14 0" />
                                 <path d="M4 10h16" />
@@ -109,7 +110,7 @@
                             </svg>
 
                             <span class="-translate-y-1/2 group-hover:visible invisible absolute start-full top-1/2 ms-4 min-w-max rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white">
-                                Service Request Status (Disabled)
+                                Service Requests
                             </span>
                         </a>
                     </li>

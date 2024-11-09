@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KWA/2ReaYmFnI12ii9gHF3Ko5PrxFVaitBGRDswkC9Y=",
+  "Hash": "LnrccOzPv+EJyUrEInaXAiEq7+TJ1AgoDCZkVHGwSik=",
   "Source": "MyApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -10,17 +10,17 @@
     {
       "Name": "MyApp\\wwwroot",
       "Source": "MyApp",
-      "ContentRoot": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
       "BasePath": "/",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MyApp.styles.css",
+      "Identity": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MyApp.styles.css",
       "SourceId": "MyApp",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\",
       "BasePath": "/",
       "RelativePath": "MyApp.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MyApp.styles.css"
+      "OriginalItemSpec": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\obj\\Debug\\net8.0-android\\scopedcss\\bundle\\MyApp.styles.css"
     },
     {
-      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MyApp.bundle.scp.css",
+      "Identity": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MyApp.bundle.scp.css",
       "SourceId": "MyApp",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\",
       "BasePath": "/",
       "RelativePath": "MyApp.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MyApp.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\obj\\Debug\\net8.0-android\\scopedcss\\projectbundle\\MyApp.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\css\\app.css",
+      "Identity": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\css\\app.css",
       "SourceId": "MyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/app.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\css\\app.css"
     },
     {
-      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\favicon.png",
       "SourceId": "MyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\files\\Note.txt",
+      "Identity": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\files\\Note.txt",
       "SourceId": "MyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "files/Note.txt",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\files\\Note.txt"
     },
     {
-      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\index.html",
       "SourceId": "MyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "index.html",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\tailwind.css",
+      "Identity": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\tailwind.css",
       "SourceId": "MyApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "tailwind.css",
       "AssetKind": "All",

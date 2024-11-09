@@ -483,5 +483,60 @@ namespace MyApp.Models
         public event Action? OnChange;
 
         private void NotifyStateChanged() => OnChange?.Invoke();
+
+
+
+
+        private ServiceRequestBasicTree serviceRequestBasicTree = new ServiceRequestBasicTree();
+
+        public void PopulateServiceRequestBasicTree()
+        {
+            serviceRequestBasicTree = ServiceRequestBasicTree.GenerateBasicTree();
+        }
+
+        //public List<ServiceRequest>? GetServiceRequestsByCategory(ServiceRequestCategory category)
+        //{
+        //    return serviceRequestBasicTree?.GetNodeByKey(category)?.Data;
+        //}
+
+        public List<ServiceRequestBasicTree.Node> GetServiceRequestsByCategory()
+        {
+            List<ServiceRequestBasicTree.Node> listOfNodes = new List<ServiceRequestBasicTree.Node>();
+
+            ServiceRequestBasicTree.TraverseTree(serviceRequestBasicTree.Root, listOfNodes);
+
+            return listOfNodes;
+        }
+
+
+        private ServiceRequestStatusGraph<List<ServiceRequest>> serviceRequestStatusGraph = new ServiceRequestStatusGraph<List<ServiceRequest>>(false, false);
+
+        public void PopulateServiceRequestStatusGraph()
+        {
+            serviceRequestStatusGraph = ServiceRequestStatusGraph<ServiceRequest>
+                .GenerateStatusGraph(ServiceRequest.GenerateServiceRequestData());
+        }
+
+        public bool IsServiceRequestStatusGraphEmpty()
+        {
+            return !serviceRequestStatusGraph.Nodes.Any();
+        }
+
+        public List<ServiceRequestStatusGraph<List<ServiceRequest>>.Node<List<ServiceRequest>>> GetServiceRequestStatusUsingBFS()
+        {
+            return serviceRequestStatusGraph.BFS();
+        }
+
+        public List<ServiceRequestStatusGraph<List<ServiceRequest>>.Node<List<ServiceRequest>>> GetServiceRequestStatusUsingDFS()
+        {
+            return serviceRequestStatusGraph.DFS();
+        }
+
+
+
+
+
+        // Service Request Dummy Data Creation 
+
     }
 }

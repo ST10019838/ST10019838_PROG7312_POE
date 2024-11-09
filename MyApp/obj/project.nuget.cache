@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "508hVWGO5jI=",
+  "dgSpecHash": "8A7b1lITVpQ=",
   "success": true,
-  "projectFilePath": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\MyApp.csproj",
+  "projectFilePath": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\MyApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\djdar\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
     "C:\\Users\\djdar\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.0\\microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512",

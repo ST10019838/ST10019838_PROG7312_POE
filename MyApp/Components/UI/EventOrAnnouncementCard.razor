@@ -69,7 +69,7 @@
                     <circle cx="7.5" cy="7.5" r=".5" fill="currentColor" />
                 </svg>
                 <p class="font-semibold">Category:</p>
-                <p class="text-wrap break-words">@(EventOrAnnouncement?.Category.ToString())</p>
+                <p class="text-wrap break-words">@(EventOrAnnouncement?.Category.ToString().Replace("_", " "))</p>
             </div>
 
             <!--Date-->
@@ -113,7 +113,7 @@
         }
         else
         {
-            <Badge Text="@($"{@EventOrAnnouncement.Category.ToString()} {@EventOrAnnouncement.Type.ToString()}")" Color="@BadgeColor" />
+            <Badge Text="@($"{@EventOrAnnouncement.Category.ToString().Replace("_", " ")} {@EventOrAnnouncement.Type.ToString()}")" Color="@BadgeColor" />
         }
     </div>
 

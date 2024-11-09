@@ -40,7 +40,7 @@ Heads up! 👋
     </select>
 
     <!--Search Icon Button-->
-    <a @onclick=SearchEventsAndAnnouncemens class="hover:cursor-pointer inline-block rounded-full border border-blue-600 p-3 text-blue-600 hover:bg-blue-600 hover:text-white focus:outline-none focus:ring active:bg-blue-500">
+    <a @onclick=SearchEventsAndAnnouncements class="hover:cursor-pointer inline-block rounded-full border border-blue-600 p-3 text-blue-600 hover:bg-blue-600 hover:text-white focus:outline-none focus:ring active:bg-blue-500">
         <span class="sr-only"> Search </span>
 
         <svg xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +86,7 @@ Heads up! 👋
         OnClear();
     }
 
-    void SearchEventsAndAnnouncemens()
+    void SearchEventsAndAnnouncements()
     {
         OnSearch(SelectedDate, SelectedCategory);
 
