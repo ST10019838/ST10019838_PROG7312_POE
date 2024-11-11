@@ -4,12 +4,12 @@
     // The following code was adapted from the prescribed module textbook
     // Author: Marcin Jamro
     // Title: C# Data Structures and Algorithms
-    public class ServiceRequestStatusGraph<T>
+    public class ServiceRequestStatusGraph
     {
         private bool _isDirected = false;
         private bool _isWeighted = false;
 
-        public List<Node<T>> Nodes { get; set; } = new List<Node<T>>();
+        public List<Node> Nodes { get; set; } = new List<Node>();
 
         public ServiceRequestStatusGraph(bool isDirected, bool isWeighted)
         {
@@ -17,17 +17,17 @@
             _isWeighted = isWeighted;
         }
 
-        public Edge<T> this[int from, int to]
+        public Edge this[int from, int to]
         {
             get
             {
-                Node<T> nodeFrom = Nodes[from];
-                Node<T> nodeTo = Nodes[to];
+                Node nodeFrom = Nodes[from];
+                Node nodeTo = Nodes[to];
 
                 int i = nodeFrom.Neighbors.IndexOf(nodeTo);
                 if (i >= 0)
                 {
-                    Edge<T> edge = new Edge<T>()
+                    Edge edge = new Edge()
                     {
                         From = nodeFrom,
                         To = nodeTo,
@@ -39,26 +39,26 @@
             }
         }
 
-        public Node<T> AddNode(T value, ServiceRequestStatus key)
+        public Node AddNode(List<ServiceRequest> value, ServiceRequestStatus key)
         {
-            Node<T> node = new Node<T>() { Data = value, Key = key };
+            Node node = new Node() { Data = value, Key = key };
             Nodes.Add(node);
             UpdateIndices();
             return node;
         }
 
-        public void RemoveNode(Node<T> nodeToRemove)
+        public void RemoveNode(Node nodeToRemove)
         {
             Nodes.Remove(nodeToRemove);
             UpdateIndices();
 
-            foreach (Node<T> node in Nodes)
+            foreach (Node node in Nodes)
             {
                 RemoveEdge(node, nodeToRemove);
             }
         }
 
-        public void AddEdge(Node<T> from, Node<T> to, int weight = 0)
+        public void AddEdge(Node from, Node to, int weight = 0)
         {
             from.Neighbors.Add(to); ;
             if (_isWeighted)
@@ -76,7 +76,7 @@
             }
         }
 
-        public void RemoveEdge(Node<T> from, Node<T> to)
+        public void RemoveEdge(Node from, Node to)
         {
             int index = from.Neighbors.FindIndex(n => n == to);
             if (index >= 0)
@@ -91,14 +91,14 @@
         }
 
 
-        public List<Edge<T>> GetEdges()
+        public List<Edge> GetEdges()
         {
-            List<Edge<T>> edges = new List<Edge<T>>();
-            foreach (Node<T> from in Nodes)
+            List<Edge> edges = new List<Edge>();
+            foreach (Node from in Nodes)
             {
                 for (int i = 0; i < from.Neighbors.Count; i++)
                 {
-                    Edge<T> edge = new Edge<T>()
+                    Edge edge = new Edge()
                     {
                         From = from,
                         To = from.Neighbors[i],
@@ -119,9 +119,9 @@
         }
 
 
-        public static ServiceRequestStatusGraph<List<ServiceRequest>> GenerateStatusGraph(List<ServiceRequest> listOfRequests)
+        public static ServiceRequestStatusGraph GenerateStatusGraph(List<ServiceRequest> listOfRequests)
         {
-            ServiceRequestStatusGraph<List<ServiceRequest>> graph = new ServiceRequestStatusGraph<List<ServiceRequest>>(isDirected: false, isWeighted: false);
+            ServiceRequestStatusGraph graph = new ServiceRequestStatusGraph(isDirected: false, isWeighted: false);
 
             List<ServiceRequest> submittedRequests = listOfRequests
                 .Where(item => item.Status == ServiceRequestStatus.Submitted)
@@ -211,12 +211,12 @@
         }
 
 
-        private void DFS(bool[] isVisited, Node<T> node, List<Node<T>> result)
+        private void DFS(bool[] isVisited, Node node, List<Node> result)
         {
             result.Add(node);
             isVisited[node.Index] = true;
 
-            foreach (Node<T> neighbor in node.Neighbors)
+            foreach (Node neighbor in node.Neighbors)
             {
                 if (!isVisited[neighbor.Index])
                 {
@@ -225,30 +225,30 @@
             }
         }
 
-        public List<Node<T>> DFS()
+        public List<Node> DFS()
         {
             bool[] isVisited = new bool[Nodes.Count];
-            List<Node<T>> result = new List<Node<T>>();
+            List<Node> result = new List<Node>();
             DFS(isVisited, Nodes[0], result);
             return result;
         }
 
 
-        private List<Node<T>> BFS(Node<T> node)
+        private List<Node> BFS(Node node)
         {
             bool[] isVisited = new bool[Nodes.Count];
             isVisited[node.Index] = true;
 
-            List<Node<T>> result = new List<Node<T>>();
-            Queue<Node<T>> queue = new Queue<Node<T>>();
+            List<Node> result = new List<Node>();
+            Queue<Node> queue = new Queue<Node>();
             queue.Enqueue(node);
 
             while (queue.Count > 0)
             {
-                Node<T> next = queue.Dequeue();
+                Node next = queue.Dequeue();
                 result.Add(next);
 
-                foreach (Node<T> neighbor in next.Neighbors)
+                foreach (Node neighbor in next.Neighbors)
                 {
                     if (!isVisited[neighbor.Index])
                     {
@@ -261,29 +261,126 @@
             return result;
         }
 
-        public List<Node<T>> BFS()
+        public List<Node> BFS()
         {
             return BFS(Nodes[0]);
         }
 
 
-        public class Node<T>
+        private ServiceRequest? IdSearchUsingBFS(Guid id, Node node)
+        {
+            bool[] isVisited = new bool[Nodes.Count];
+            isVisited[node.Index] = true;
+
+            //List<Node> result = new List<Node>();
+
+            ServiceRequest? result = null;
+            bool itemFound = false;
+            Queue<Node> queue = new Queue<Node>();
+            queue.Enqueue(node);
+
+            while (queue.Count > 0 && !itemFound)
+            {
+                Node next = queue.Dequeue();
+                //result.Add(next);
+
+                // Check the nodes data
+                foreach (var item in next.Data)
+                {
+                    if (item.Id.Equals(id))
+                    {
+                        itemFound = true;
+                        result = item;
+                        break;
+                    }
+                }
+
+                if (itemFound)
+                {
+                    break;
+                }
+
+                // Search the next neighbor if the service request was not found
+                foreach (Node neighbor in next.Neighbors)
+                {
+                    if (!isVisited[neighbor.Index])
+                    {
+                        isVisited[neighbor.Index] = true;
+                        queue.Enqueue(neighbor);
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public ServiceRequest? SearchByIdUsingBFS(Guid id)
+        {
+            return IdSearchUsingBFS(id, Nodes[0]);
+        }
+
+
+        private void IdSearchUsingDFS(Guid id, bool[] isVisited, Node node, out ServiceRequest? result)
+        {
+            //result.Add(node);
+
+            result = null;
+
+            bool itemFound = false;
+            foreach (var item in node.Data)
+            {
+                if (item.Id.Equals(id))
+                {
+                    itemFound = true;
+                    result = item;
+                    return;
+                }
+            }
+
+            isVisited[node.Index] = true;
+
+            foreach (Node neighbor in node.Neighbors)
+            {
+                if (!isVisited[neighbor.Index])
+                {
+                    IdSearchUsingDFS(id, isVisited, neighbor, out result);
+                }
+            }
+        }
+        public ServiceRequest? SearchByIdUsingDFS(Guid id)
+        {
+            bool[] isVisited = new bool[Nodes.Count];
+            ServiceRequest? result = null;
+
+            IdSearchUsingDFS(id, isVisited, Nodes[0], out result);
+            return result;
+        }
+
+        public class Node
         {
             public int Index { get; set; }
 
             public ServiceRequestStatus Key { get; set; }
-            public T Data { get; set; }
+            public List<ServiceRequest> Data { get; set; }
 
-            public List<Node<T>> Neighbors { get; set; } = new List<Node<T>>();
+            public List<Node> Neighbors { get; set; } = new List<Node>();
 
             public List<int> Weights { get; set; } = new List<int>();
         }
 
-        public class Edge<T>
+        public class Edge
         {
-            public Node<T> From { get; set; }
-            public Node<T> To { get; set; }
+            public Node From { get; set; }
+            public Node To { get; set; }
             public int Weight { get; set; }
         }
+
+
+        public enum GraphSearchMethod
+        {
+            DFS,
+            BFS
+        }
+
     }
 }

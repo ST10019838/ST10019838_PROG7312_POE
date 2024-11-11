@@ -1,6 +1,4 @@
-﻿using static MyApp.Models.ServiceRequest;
-
-namespace MyApp.Models
+﻿namespace MyApp.Models
 {
 
     // The following code was adapted from the prescribed module textbook
@@ -16,6 +14,14 @@ namespace MyApp.Models
             // the first level of for a specific node
             return Root.Children.Find(node => node.Key.Equals(key));
         }
+
+
+        public ServiceRequest? SearchById(Guid id)
+        {
+            // The root in the basic tree contains a list of all service requests, allowing for easier searching
+            return Root.Data.Find(item => item.Id.Equals(id));
+        }
+
 
         // The following method was generated and adapted by Poe AI
         // Link: https://poe.com/
@@ -34,25 +40,48 @@ namespace MyApp.Models
             }
         }
 
-        public static ServiceRequestBasicTree GenerateBasicTree()
+        public static ServiceRequestBasicTree GenerateBasicTree(List<ServiceRequest> listOfRequests)
         {
-            var EventServiceRequests = GenerateEventServiceRequests();
-            var FinancialServiceRequests = GenerateFinancialServiceRequests();
-            var HealthcareServiceRequests = GenerateHealthcareServiceRequests();
-            var TransportationServiceRequests = GenerateTransportationServiceRequests();
-            var HomeServiceRequests = GenerateHomeServiceRequests();
-            var CustomerSupportServiceRequests = GenerateCustomerSupportServiceRequests();
-            var ITServiceRequests = GenerateITServiceRequests();
-            var MaintenanceServiceRequests = GenerateMaintenanceServiceRequests();
+            List<ServiceRequest> eventRequests = listOfRequests
+                .Where(item => item.Category == ServiceRequestCategory.Event)
+                .ToList();
+
+            List<ServiceRequest> financialRequests = listOfRequests
+               .Where(item => item.Category == ServiceRequestCategory.Financial)
+               .ToList();
+
+            List<ServiceRequest> healthcareRequests = listOfRequests
+               .Where(item => item.Category == ServiceRequestCategory.Healthcare)
+               .ToList();
+
+            List<ServiceRequest> transportationRequests = listOfRequests
+               .Where(item => item.Category == ServiceRequestCategory.Transportation)
+               .ToList();
+
+            List<ServiceRequest> homeRequests = listOfRequests
+               .Where(item => item.Category == ServiceRequestCategory.Home)
+               .ToList();
+
+            List<ServiceRequest> customerSupportRequests = listOfRequests
+               .Where(item => item.Category == ServiceRequestCategory.Customer_Support)
+               .ToList();
+
+            List<ServiceRequest> itRequests = listOfRequests
+               .Where(item => item.Category == ServiceRequestCategory.IT)
+               .ToList();
+
+            List<ServiceRequest> maintenanceRequests = listOfRequests
+               .Where(item => item.Category == ServiceRequestCategory.Maintenance)
+               .ToList();
 
 
-            var allServiceRequests = EventServiceRequests.Concat(FinancialServiceRequests)
-                                        .Concat(HealthcareServiceRequests)
-                                        .Concat(TransportationServiceRequests)
-                                        .Concat(HomeServiceRequests)
-                                        .Concat(CustomerSupportServiceRequests)
-                                        .Concat(ITServiceRequests)
-                                        .Concat(MaintenanceServiceRequests)
+            var allServiceRequests = eventRequests.Concat(financialRequests)
+                                        .Concat(healthcareRequests)
+                                        .Concat(transportationRequests)
+                                        .Concat(homeRequests)
+                                        .Concat(customerSupportRequests)
+                                        .Concat(itRequests)
+                                        .Concat(maintenanceRequests)
                                         .ToList();
 
             ServiceRequestBasicTree tree = new ServiceRequestBasicTree();
@@ -61,19 +90,20 @@ namespace MyApp.Models
 
             tree.Root.Children = new List<Node>
             {
-                new Node { Key = ServiceRequestCategory.Event, Data = EventServiceRequests, Parent = tree.Root },
-                new Node { Key = ServiceRequestCategory.Financial, Data = FinancialServiceRequests, Parent = tree.Root },
-                new Node { Key = ServiceRequestCategory.Healthcare, Data = HealthcareServiceRequests, Parent = tree.Root },
-                new Node { Key = ServiceRequestCategory.Transportation, Data = TransportationServiceRequests, Parent = tree.Root },
-                new Node { Key = ServiceRequestCategory.Home,  Data = HomeServiceRequests, Parent = tree.Root },
-                new Node { Key = ServiceRequestCategory.Customer_Support, Data = CustomerSupportServiceRequests, Parent = tree.Root },
-                new Node { Key = ServiceRequestCategory.IT, Data = ITServiceRequests, Parent = tree.Root },
-                new Node { Key = ServiceRequestCategory.Maintenance, Data = MaintenanceServiceRequests, Parent = tree.Root },
-
+                new Node { Key = ServiceRequestCategory.Event, Data = eventRequests, Parent = tree.Root },
+                new Node { Key = ServiceRequestCategory.Financial, Data = financialRequests, Parent = tree.Root },
+                new Node { Key = ServiceRequestCategory.Healthcare, Data = healthcareRequests, Parent = tree.Root },
+                new Node { Key = ServiceRequestCategory.Transportation, Data = transportationRequests, Parent = tree.Root },
+                new Node { Key = ServiceRequestCategory.Home,  Data = homeRequests, Parent = tree.Root },
+                new Node { Key = ServiceRequestCategory.Customer_Support, Data = customerSupportRequests, Parent = tree.Root },
+                new Node { Key = ServiceRequestCategory.IT, Data = itRequests, Parent = tree.Root },
+                new Node { Key = ServiceRequestCategory.Maintenance, Data = maintenanceRequests, Parent = tree.Root },
             };
 
             return tree;
         }
+
+
 
 
         public class Node
