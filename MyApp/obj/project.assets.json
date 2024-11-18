@@ -45951,11 +45951,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\MyApp.csproj",
+      "projectUniqueName": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\MyApp.csproj",
       "projectName": "MyApp",
-      "projectPath": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\MyApp.csproj",
+      "projectPath": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\MyApp.csproj",
       "packagesPath": "C:\\Users\\djdar\\.nuget\\packages\\",
-      "outputPath": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\obj\\",
+      "outputPath": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

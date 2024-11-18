@@ -1,4 +1,5 @@
 ﻿using Priority_Queue;
+using static MyApp.Models.ServiceRequestStatusGraph;
 
 namespace MyApp.Models
 {
@@ -19,7 +20,6 @@ namespace MyApp.Models
                 NotifyStateChanged();
             }
         }
-
 
 
         private SortedSet<DateOnly> utilizedDates = new SortedSet<DateOnly>();
@@ -483,5 +483,117 @@ namespace MyApp.Models
         public event Action? OnChange;
 
         private void NotifyStateChanged() => OnChange?.Invoke();
+
+
+
+
+        private ServiceRequestBasicTree serviceRequestBasicTree = new ServiceRequestBasicTree();
+        private ServiceRequestStatusGraph serviceRequestStatusGraph = new ServiceRequestStatusGraph(false, false);
+        private ServiceRequestBasicTree personalServiceRequestBasicTree = new ServiceRequestBasicTree();
+        private ServiceRequestStatusGraph personalServiceRequestStatusGraph = new ServiceRequestStatusGraph(false, false);
+
+        public bool IsServiceRequestBasicTreeEmpty()
+        {
+            return !serviceRequestBasicTree.Root.Data.Any();
+        }
+
+        public void AddServiceRequestData()
+        {
+            List<ServiceRequest> serviceRequests = ServiceRequest.GenerateServiceRequestData();
+
+            serviceRequestBasicTree = ServiceRequestBasicTree.GenerateBasicTree(serviceRequests);
+            serviceRequestStatusGraph = ServiceRequestStatusGraph.GenerateStatusGraph(serviceRequests);
+
+
+            // The following linq was adapted from stackoverflow
+            // Author: Ers (https://stackoverflow.com/users/205743/ers)
+            // Link: https://stackoverflow.com/questions/48087/select-n-random-elements-from-a-listt-in-c-sharp
+            Random rng = new Random();
+            List<ServiceRequest> personalServiceRequests = serviceRequests.OrderBy(x => rng.Next()).Take(5).ToList();
+
+            personalServiceRequestBasicTree = ServiceRequestBasicTree.GenerateBasicTree(personalServiceRequests);
+            personalServiceRequestStatusGraph = ServiceRequestStatusGraph.GenerateStatusGraph(personalServiceRequests);
+        }
+
+
+
+
+        //public List<ServiceRequest>? GetServiceRequestsByCategory(ServiceRequestCategory category)
+        //{
+        //    return serviceRequestBasicTree?.GetNodeByKey(category)?.Data;
+        //}
+
+        public List<ServiceRequestBasicTree.Node> GetServiceRequestsByCategory()
+        {
+            List<ServiceRequestBasicTree.Node> listOfNodes = new List<ServiceRequestBasicTree.Node>();
+
+            ServiceRequestBasicTree.TraverseTree(serviceRequestBasicTree.Root, listOfNodes);
+
+            return listOfNodes;
+        }
+
+
+        public bool IsServiceRequestStatusGraphEmpty()
+        {
+            return !serviceRequestStatusGraph.Nodes.Any();
+        }
+
+        public List<ServiceRequestStatusGraph.Node> GetServiceRequestStatusUsingBFS()
+        {
+            return serviceRequestStatusGraph.BFS();
+        }
+
+        public List<ServiceRequestStatusGraph.Node> GetServiceRequestStatusUsingDFS()
+        {
+            return serviceRequestStatusGraph.DFS();
+        }
+
+
+        public ServiceRequest? SearchBasicTreeForServiceRequestById(Guid id)
+        {
+            return serviceRequestBasicTree.SearchById(id);
+        }
+
+        public ServiceRequest? SearchGraphForServiceRequestById(Guid id, GraphSearchMethod searchMethod)
+        {
+            return searchMethod.Equals(GraphSearchMethod.BFS) ?
+                serviceRequestStatusGraph.SearchByIdUsingBFS(id) :
+                serviceRequestStatusGraph.SearchByIdUsingDFS(id);
+        }
+
+
+
+
+
+
+        public List<ServiceRequestBasicTree.Node> GetPersonalServiceRequestsByCategory()
+        {
+            List<ServiceRequestBasicTree.Node> listOfNodes = new List<ServiceRequestBasicTree.Node>();
+
+            ServiceRequestBasicTree.TraverseTree(personalServiceRequestBasicTree.Root, listOfNodes);
+
+            return listOfNodes;
+        }
+
+
+        public List<ServiceRequestStatusGraph.Node> GetPersonalServiceRequestStatusUsingBFS()
+        {
+            return personalServiceRequestStatusGraph.BFS();
+        }
+
+        public List<ServiceRequestStatusGraph.Node> GetPersonalServiceRequestStatusUsingDFS()
+        {
+            return personalServiceRequestStatusGraph.DFS();
+        }
+
+        public bool IsPersonalServiceRequestBasicTreeEmpty()
+        {
+            return !personalServiceRequestBasicTree.Root.Data.Any();
+        }
+        public bool IsPersonalServiceRequestStatusGraphEmpty()
+        {
+            return !personalServiceRequestStatusGraph.Nodes.Any();
+        }
+
     }
 }

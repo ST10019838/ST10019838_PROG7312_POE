@@ -1,27 +1,27 @@
 {
   "Files": [
     {
-      "Id": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\MyApp.styles.css",
+      "Id": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\obj\\Debug\\net8.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\MyApp.styles.css",
       "PackagePath": "staticwebassets\\MyApp.styles.css"
     },
     {
-      "Id": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\css\\app.css",
+      "Id": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\files\\Note.txt",
+      "Id": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\files\\Note.txt",
       "PackagePath": "staticwebassets\\files\\Note.txt"
     },
     {
-      "Id": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\index.html",
+      "Id": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Varsity\\PROG7312\\Repo\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\tailwind.css",
+      "Id": "C:\\Users\\djdar\\Downloads\\PROG7312 Part 2 Poe\\ST10019838_PROG7312_POE\\MyApp\\wwwroot\\tailwind.css",
       "PackagePath": "staticwebassets\\tailwind.css"
     },
     {

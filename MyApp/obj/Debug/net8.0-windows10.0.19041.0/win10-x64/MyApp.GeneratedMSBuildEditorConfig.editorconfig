@@ -9,7 +9,7 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MyApp
 build_property.RootNamespace = MyApp
-build_property.ProjectDir = C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp\
+build_property.ProjectDir = C:\Users\djdar\Downloads\PROG7312 Part 2 Poe\ST10019838_PROG7312_POE\MyApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTAotOptimizerEnabled = true
@@ -22,206 +22,213 @@ build_property.CsWinRTAotWarningLevel =
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Varsity\PROG7312\Repo\ST10019838_PROG7312_POE\MyApp
+build_property.MSBuildProjectDirectory = C:\Users\djdar\Downloads\PROG7312 Part 2 Poe\ST10019838_PROG7312_POE\MyApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/App.xaml]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MyApp.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/MainPage.xaml]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MyApp.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/Forms/IssueForm.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/Forms/IssueForm.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xGb3Jtc1xJc3N1ZUZvcm0ucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/Layout/DropdownMenu.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/Layout/DropdownMenu.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcRHJvcGRvd25NZW51LnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/Layout/MenuAccessories.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/Layout/MenuAccessories.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWVudUFjY2Vzc29yaWVzLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/Layout/NavMenu.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/Layout/SideMenu.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/Layout/SideMenu.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcU2lkZU1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/Pages/Counter.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/Pages/Counter.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/Pages/Home.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/Pages/LocalEventsAndAnnouncements.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/Pages/LocalEventsAndAnnouncements.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2NhbEV2ZW50c0FuZEFubm91bmNlbWVudHMucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/Pages/ReportIssues.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/Pages/ReportIssues.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZXBvcnRJc3N1ZXMucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/Pages/ServiceRequestStatus.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/Pages/ServiceRequests.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXJ2aWNlUmVxdWVzdFN0YXR1cy5yYXpvcg==
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXJ2aWNlUmVxdWVzdHMucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/Pages/Weather.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/Pages/Weather.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/Routes.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/Routes.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/UI/Badge.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/UI/Badge.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxCYWRnZS5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/UI/Button.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/UI/Button.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxCdXR0b24ucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/UI/DateSeparator.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/UI/DateSeparator.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxEYXRlU2VwYXJhdG9yLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/UI/EventOrAnnouncementCard.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/UI/EventOrAnnouncementCard.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxFdmVudE9yQW5ub3VuY2VtZW50Q2FyZC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/UI/FileInput.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/UI/FileInput.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxGaWxlSW5wdXQucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/UI/IssueReportCard.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/UI/IssueReportCard.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxJc3N1ZVJlcG9ydENhcmQucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/UI/Modal.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/UI/Modal.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxNb2RhbC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/UI/ProgressBar.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/UI/ProgressBar.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxQcm9ncmVzc0Jhci5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/UI/Search.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/UI/Search.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxTZWFyY2gucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/UI/Select.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/UI/Select.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxTZWxlY3QucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/UI/Textarea.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/UI/ServiceRequestCard.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxTZXJ2aWNlUmVxdWVzdENhcmQucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/UI/Textarea.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxUZXh0YXJlYS5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/UI/TextInput.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/UI/TextInput.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxUZXh0SW5wdXQucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/UI/Toast.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/UI/Toast.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxUb2FzdC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/_Imports.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/_Imports.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Varsity/PROG7312/Repo/ST10019838_PROG7312_POE/MyApp/Components/Layout/MainLayout.razor]
+[C:/Users/djdar/Downloads/PROG7312 Part 2 Poe/ST10019838_PROG7312_POE/MyApp/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
