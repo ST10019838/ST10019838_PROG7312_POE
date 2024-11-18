@@ -1,0 +1,11 @@
+Main Repository:
+https://github.com/ST10019838/ST10019838_PROG7312_POE.git
+
+Part 1 GitHub Classroom Repository:
+https://github.com/IIEWFL/prog7312-part-1-ST10019838
+
+Part 2 GitHub Classroom Repository:
+https://github.com/IIEWFL/prog7312-part-2-ST10019838.git
+
+Part 3 GitHub Classroom Repository:
+https://github.com/IIEWFL/prog7312-poe-ST10019838
