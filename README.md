@@ -1,15 +1,17 @@
 # ST10019838_PROG7312_POE
+
 ## WELCOME!
+
 Welcome to my repository! This repo contains all of my solutions to the PROG7312 POE.
 
-Solution Progress: 66%/100% Completed
+Solution Progress: 100%/100% Completed
 
-* Added:
-  *  Part 1
-  *  Part 2 (New)
+- Added:
+  - Part 1
+  - Part 2
+  - Part 3 (New)
 
-    
-To obtain any code relating to a specific part of the solution, navigate to the commit history then find the commit with the tag of 
+To obtain any code relating to a specific part of the solution, navigate to the commit history then find the commit with the tag of
 the solution you are wanting to obtain.
 
 </br>
@@ -17,22 +19,21 @@ the solution you are wanting to obtain.
 ## Components of this repository
 
 - MyApp - a folder containing source code for the project
-- Documentation - a folder containing all documentation for the project (**INCLUDING THE RESEARCH**)
+- Documentation - a folder containing all documentation for the project (**INCLUDING THE RESEARCH AND REPORTS!**)
 - Tutorials - a folder containing all video tutorials for the project
 
 </br>
 </br>
 
 ## Table of Contents
-* [Project Description](#project-description)
-* [How to Use](#how-to-use)
-* [Project Set Up](#project-set-up)
-  * [Prequisites](#prequisites)
-  * [Installation](#installation)
-* [Tools and Dependencies](#tools-and-dependencies)
-* [References](#references)
 
-
+- [Project Description](#project-description)
+- [How to Use](#how-to-use)
+- [Project Set Up](#project-set-up)
+  - [Prequisites](#prequisites)
+  - [Installation](#installation)
+- [Tools and Dependencies](#tools-and-dependencies)
+- [References](#references)
 
 </br>
 
@@ -44,10 +45,10 @@ This application aims to streamline municipal services in South Africa by provid
 platform for citizens to access and request variaous municipal services.
 
 In a nutshell, this application will enable citizens to:
-- Request issues and request services
-- Access information about local events and announcements (**NEWLY ADDED!**)
-- Receive updates on the status of their service requests _(**In Progress...**)_
 
+- Request issues and request services
+- Access information about local events and announcements
+- Receive updates on the status of their service requests _(**NEWLY ADDED!**)_
 
 </br>
 </br>
@@ -57,15 +58,23 @@ In a nutshell, this application will enable citizens to:
 The following tutorials can found be under the Tutorials folder:
 
 **_Part 1:_**
-  * ST10019838_PROG7312_Part1_Tutorial
+
+- ST10019838_PROG7312_Part1_Tutorial
 
 **_Part 2:_**
-  * ST10019838_PROG7312_Part2_Tutorial
+
+- ST10019838_PROG7312_Part2_Tutorial
+
+**_Part 3:_**
+
+- ST10019838_PROG7312_Part3_Tutorial
+
+</br>
 
 ### **NB**:
 
-
 **Before** running the application:
+
 1. Navigate to the Package Manager Console
 2. Run one of the commands (They do the same thing, just the first one is shorter):
 
@@ -76,44 +85,44 @@ The following tutorials can found be under the Tutorials folder:
 _or_
 
 ```
- npx tailwindcss -i ./Styles/tailwind.css -o ./wwwroot/tailwind.css --watch 
+ npx tailwindcss -i ./Styles/tailwind.css -o ./wwwroot/tailwind.css --watch
 ```
 
-
- These steps are **VERY IMPORTANT** as they will ensure that all styles are properly added to the application.
-
+These steps are **VERY IMPORTANT** as they will ensure that all styles are properly added to the application.
 
 </br>
 </br>
 
 # Project Set-Up
+
 ## Prequisites
+
 Below are the following items/tools that need to be installed
 before using the application:
 
 - Visual Studio 2022 (The latest version)
-  
-    ** **IMPORTANT** **
-    
-    When installing Visual Studio, ensure the following **_Workloads_** are selected:
-  
-    * ASP.NET and web development
-    * Node.js development
-    * .NET Multi-platform App UI development
-    * .NET desktop development
-    
-    ** **IMPORTANT** **
+
+  \*\* **IMPORTANT** \*\*
+
+  When installing Visual Studio, ensure the following **_Workloads_** are selected:
+
+  - ASP.NET and web development
+  - Node.js development
+  - .NET Multi-platform App UI development
+  - .NET desktop development
+
+  \*\* **IMPORTANT** \*\*
+
 - .Net 8.0
 - Node (The latest version)
 
 </br>
 
-
-
 ## Installation
 
 Under the Tutorials folder, refer to:
-  * ST10019838_PROG7312_Installation_Tutorial
+
+- ST10019838_PROG7312_Installation_Tutorial
 
 </br>
 
@@ -125,31 +134,32 @@ _or_
  git clone https://github.com/ST10019838/ST10019838_PROG7312_POE.git
 ```
 
-
 2. Open the Visual Studio solution under the "MyApp"
 
 3. Open the Package Manager Console
 
 4. Install dependencies:
+
 ```bash
  npm install
- ```
-
+```
 
 </br>
    
 </br>
 
 # Tools and Dependencies
+
 ### Tools:
+
 - HyperUI - https://www.hyperui.dev/
 - tailwindcss- https://tailwindcss.com/
 
 ### Dependencies:
+
 - TailwindMerge.NET - https://github.com/desmondinho/tailwind-merge-dotnet
 
 </br>
-
 
 # References
 
